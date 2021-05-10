@@ -1,0 +1,25 @@
+.center {
+  margin: 0 auto;
+  width: 100vw;
+  text-align: center;
+}
+
+.sliderWrap {
+  width: 100px;
+  overflow: hidden;
+}
+
+.sliderWrap .sliderList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.sliderWrap .sliderList .image {
+  cursor: pointer;
+  width: 100px;
+  height: 100%;
+}
+/*# sourceMappingURL=test.css.map */

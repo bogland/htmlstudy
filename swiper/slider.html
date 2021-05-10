@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="./test.css" />
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>
+  <script>
+    class Swiper{
+      clickedState=false;
+      direction=false; //false:left, true:right;
+      relativeDistance=0;
+      preDistance=0;
+      initPosX=0;
+      listElement;
+
+      onMouseDown(curElement){
+        console.log("마우스 다운");
+        this.clickedState=true;
+        var e = window.event;
+        this.initPosX = e.clientX;
+        this.listElement = curElement;
+      }
+      onMouseUp(){
+        console.log("마우스 업");
+        this.clickedState=false;
+
+        this.preDistance = this.preDistance+this.relativeDistance;
+      }
+      onDrag(){
+        const curPosX = window.event.clientX;
+        if(curPosX==0) return; //마우스를 놓으면 0이 들어온거 방어코드
+        
+        const relativeDistance = curPosX-this.initPosX;
+        this.relativeDistance = relativeDistance;
+        console.log('드레그 중',this.preDistance+relativeDistance);
+        const absoluteDistance = this.preDistance+relativeDistance;
+        let filterDistance=absoluteDistance;
+        if(filterDistance>0)
+        filterDistance = 0;
+        if(filterDistance<-200)
+        filterDistance = -200;
+        this.listElement.style.transform = `translateX(${filterDistance}px)`;
+      }
+    }
+    const throttle = (func, limit) => {
+      let inThrottle
+      return function() {
+        const args = arguments
+        const context = this
+        if (!inThrottle) {
+          func.apply(context, args)
+          inThrottle = true
+          setTimeout(() => inThrottle = false, limit)
+        }
+      }
+    }
+
+
+    const swiper = new Swiper();
+    $(Document).ready(()=>{
+      const element = document.querySelector(".sliderList");
+      element.addEventListener("drag",throttle(()=>{
+        swiper.onDrag();
+      },20),false)
+
+    })
+  </script>
+</head>
+<body>
+  <section class="center">
+    <h1 class="center"> 슬라이더</h1>
+    <div class="sliderWrap center">
+      <!-- ondrag="swiper.onDrag()" -->
+      <div class="sliderList"  onMouseDown="swiper.onMouseDown(this)" onmouseup="swiper.onMouseUp()" ondragend="swiper.onMouseUp()">
+        <img class="image" 
+        src="https://image.ohou.se/i/bucketplace-v2-development/uploads/banners/home_banner/159722558926298336.png?gif=1&w=850&webp=1"/>
+        <img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/competitions/161976315390961313.png?gif=1&w=850&webp=1"/>
+        <img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/admins/competitions/161957116930176686.png?gif=1&w=850&webp=1"/>
+      </div>
+      <div></div>
+    </div>
+  </section>
+</body>
+</html>
