@@ -12,12 +12,22 @@
   crossorigin="anonymous"></script>
   <script>
     class Swiper{
+      pageNum = 3;
+      width=100;
+      maxWidth=0;
+
       clickedState=false;
       direction=false; //false:left, true:right;
       relativeDistance=0;
       preDistance=0;
       initPosX=0;
       listElement;
+
+      constructor(pageNum=0,width=100){
+        this.pageNum=pageNum;
+        this.width=width;
+        this.maxWidth = (pageNum-1)*width;
+      }
 
       onMouseDown(curElement){
         console.log("마우스 다운");
@@ -28,9 +38,14 @@
       }
       onMouseUp(){
         console.log("마우스 업");
+
         this.clickedState=false;
 
         this.preDistance = this.preDistance+this.relativeDistance;
+        const filterDistance = this.pageFilter(this.preDistance)
+        console.log("MouseUp : ",filterDistance);
+        this.listElement.style.transform = `translateX(${filterDistance}px)`;
+
       }
       onDrag(){
         const curPosX = window.event.clientX;
@@ -40,12 +55,20 @@
         this.relativeDistance = relativeDistance;
         console.log('드레그 중',this.preDistance+relativeDistance);
         const absoluteDistance = this.preDistance+relativeDistance;
-        let filterDistance=absoluteDistance;
-        if(filterDistance>0)
-        filterDistance = 0;
-        if(filterDistance<-200)
-        filterDistance = -200;
+        let filterDistance=this.limitFilter(absoluteDistance);
         this.listElement.style.transform = `translateX(${filterDistance}px)`;
+        console.log(filterDistance);
+      }
+      limitFilter(distance){
+        if(distance>0)
+        distance = 0;
+        if(distance<-this.maxWidth)
+        distance = -this.maxWidth;
+        return distance;
+      }
+      pageFilter(distance){ 
+        //0 .. -100 .. -200
+        return -Math.abs(Math.round(distance/this.width))*this.width;
       }
     }
     const throttle = (func, limit) => {
@@ -62,7 +85,7 @@
     }
 
 
-    const swiper = new Swiper();
+    const swiper = new Swiper(3,100);
     $(Document).ready(()=>{
       const element = document.querySelector(".sliderList");
       element.addEventListener("drag",throttle(()=>{
