@@ -1,14 +1,15 @@
 .wrap {
-  max-width: 1000px;
+  max-width: 1278px;
   margin: 0 auto;
 }
 
-.full-width {
+.fullWidth {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
 
 header .topBannerSection {
+  position: relative;
   height: 57px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,16 +20,57 @@ header .topBannerSection {
   background-color: #6ec3ed;
 }
 
+header .topBannerSection .closeBtn {
+  position: absolute;
+  right: 0;
+  height: 21px;
+  width: 21px;
+  color: white;
+  top: calc(57px / 2 - (21px / 2));
+}
+
 header .titleSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: rgba(187, 75, 113, 0.2);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(93, 77, 112, 0.2);
   height: 91px;
+  overflow-x: auto;
+}
+
+header .titleSection .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+header .titleSection .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 header .titleSection .title {
   font-size: 30px;
+  font-weight: bold;
 }
 
 header .titleSection .mainCategoryWrap {
@@ -37,8 +79,57 @@ header .titleSection .mainCategoryWrap {
   display: flex;
 }
 
+header .titleSection .mainCategoryWrap li {
+  margin-left: 37px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+header .titleSection .mainCategoryWrap li.active {
+  color: #6ec3ed;
+}
+
+header .titleSection .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: solid 1px;
+  padding: 13px 14px;
+}
+
+header .titleSection .search input {
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  padding-left: 10px;
+}
+
+header .titleSection .search i {
+  font-size: 21px;
+}
+
+header .titleSection .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .titleSection .login ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .titleSection .login ul li {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+header .titleSection .login ul li + li {
+  border-left: solid 1px;
+}
+
 header .categorySection {
-  background: rgba(183, 214, 40, 0.2);
+  background: rgba(248, 41, 35, 0.2);
   height: 56px;
 }
 
@@ -47,7 +138,7 @@ main {
 }
 
 main .bannerSection {
-  background: rgba(43, 3, 240, 0.2);
+  background: rgba(22, 137, 10, 0.2);
   height: 427px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -55,7 +146,7 @@ main .bannerSection {
 }
 
 main .bannerDescriptSection {
-  background: rgba(112, 143, 133, 0.2);
+  background: rgba(62, 152, 33, 0.2);
   height: 46px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -63,7 +154,7 @@ main .bannerDescriptSection {
 }
 
 main .todayDealSection {
-  background: rgba(97, 62, 98, 0.2);
+  background: rgba(193, 56, 209, 0.2);
   height: 500px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -71,7 +162,7 @@ main .todayDealSection {
 }
 
 main .categorySection {
-  background: rgba(24, 103, 159, 0.2);
+  background: rgba(88, 116, 173, 0.2);
   height: 191px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -79,7 +170,7 @@ main .categorySection {
 }
 
 main .popularKeywordSection {
-  background: rgba(126, 11, 92, 0.2);
+  background: rgba(253, 78, 115, 0.2);
   height: 170px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -87,7 +178,7 @@ main .popularKeywordSection {
 }
 
 main .popularProductSection {
-  background: rgba(114, 157, 164, 0.2);
+  background: rgba(119, 28, 220, 0.2);
   height: 552px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;

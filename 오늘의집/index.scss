@@ -2,31 +2,88 @@
 $blue: #6ec3ed;
 
 .wrap {
-  max-width: 1000px;
+  max-width: 1278px;
   margin: 0 auto;
 }
 
-.full-width {
+.fullWidth {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
 
 header {
   .topBannerSection {
+    position: relative;
     height: 57px;
     display: flex;
     justify-content: center;
     background-color: $blue;
+    .closeBtn {
+      position: absolute;
+      right: 0;
+      height: 21px;
+      width: 21px;
+      color: white;
+      top: calc(57px / 2 - (21px / 2));
+    }
   }
   .titleSection {
     display: flex;
+    align-items: center;
     background: rgbConverter();
     height: 91px;
+    overflow-x: auto;
+    .left {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: space-between;
+    }
     .title {
       font-size: 30px;
+      font-weight: bold;
     }
     .mainCategoryWrap {
       display: flex;
+      li {
+        margin-left: 37px;
+        font-weight: bold;
+        font-size: 19px;
+      }
+      li.active {
+        color: $blue;
+      }
+    }
+    .search {
+      display: flex;
+      border: solid 1px;
+      padding: 13px 14px;
+      input {
+        border: none;
+        background: rgba(255, 255, 255, 0);
+        padding-left: 10px;
+      }
+      i {
+        font-size: 21px;
+      }
+    }
+    .login {
+      display: flex;
+      ul {
+        display: flex;
+        li {
+          padding-left: 13px;
+          padding-right: 13px;
+        }
+        li + li {
+          border-left: solid 1px;
+        }
+      }
     }
   }
   .categorySection {

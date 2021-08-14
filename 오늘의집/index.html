@@ -11,34 +11,44 @@
     <link rel="stylesheet" href="/reset.css" />
     <link rel="stylesheet" href="/index.css" />
     <title>오늘의집</title>
-    <style>
-      @media screen and (max-width: 760px) {
-        .topBannerSection {
-          display: none;
-        }
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <header class="wrap">
-      <section class="topBannerSection full-width">
+      <section class="topBannerSection fullWidth">
         <img src="https://placeimg.com/320/57/any" />
+        <i class="fas fa-times closeBtn"></i>
       </section>
       <section class="titleSection">
-        <span class="title">오늘의집</span>
-        <ui class="mainCategoryWrap">
-          <li class="mainCategory">커뮤니티</li>
-          <li class="mainCategory">스토어</li>
-          <li class="mainCategory">인테리어시공</li>
-        </ui>
-        <div class="search"></div>
-        <div class="login"></div>
-        <div class="writeBtn"></div>
+        <div class="left">
+          <span class="title">오늘의집</span>
+          <ui class="mainCategoryWrap">
+            <li class="mainCategory">커뮤니티</li>
+            <li class="mainCategory active">스토어</li>
+            <li class="mainCategory">인테리어시공</li>
+          </ui>
+        </div>
+        <div class="right">
+          <div class="search">
+            <i class="fas fa-search"></i>
+            <input placeholder="스토어 검색" />
+            <i class="fas fa-camera"></i>
+          </div>
+          <div class="login">
+            <i class="fas fa-shopping-cart"></i>
+            <ul>
+              <li>로그인</li>
+              <li>회원가입</li>
+              <li>고객센터</li>
+            </ul>
+          </div>
+          <div class="writeBtn"></div>
+        </div>
       </section>
       <section class="categorySection">서브카테고리</section>
     </header>
     <main class="wrap">
-      <section class="bannerSection full-width">광고베너</section>
+      <section class="bannerSection fullWidth">광고베너</section>
       <section class="bannerDescriptSection">광고설명</section>
       <section class="todayDealSection">오늘의딜</section>
       <section class="categorySection">가구카테고리</section>
