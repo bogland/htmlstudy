@@ -1,6 +1,11 @@
 .wrap {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 header .topBannerSection {
@@ -11,15 +16,6 @@ header .topBannerSection {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-header .topBannerSection::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  height: 57px;
-  width: 100vw;
   background-color: #6ec3ed;
 }
 
@@ -27,6 +23,8 @@ header .titleSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: rgba(187, 75, 113, 0.2);
+  height: 91px;
 }
 
 header .titleSection .title {
@@ -37,5 +35,110 @@ header .titleSection .mainCategoryWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+header .categorySection {
+  background: rgba(183, 214, 40, 0.2);
+  height: 56px;
+}
+
+main {
+  position: relative;
+}
+
+main .bannerSection {
+  background: rgba(43, 3, 240, 0.2);
+  height: 427px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main .bannerDescriptSection {
+  background: rgba(112, 143, 133, 0.2);
+  height: 46px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main .todayDealSection {
+  background: rgba(97, 62, 98, 0.2);
+  height: 500px;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+main .categorySection {
+  background: rgba(24, 103, 159, 0.2);
+  height: 191px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+main .popularKeywordSection {
+  background: rgba(126, 11, 92, 0.2);
+  height: 170px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+main .popularProductSection {
+  background: rgba(114, 157, 164, 0.2);
+  height: 552px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media screen and (max-width: 760px) {
+  .wrap {
+    padding: 0 16px;
+  }
+  header .topBannerSection {
+    display: none;
+  }
+  header .titleSection {
+    height: 57px;
+  }
+  header .categorySection {
+    height: 48px;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .bannerSection {
+    height: 100%;
+  }
+  main .bannerDescriptSection {
+    display: none;
+  }
+  main .todayDealSection {
+    height: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  main .categorySection {
+    height: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  main .popularKeywordSection {
+    height: 100%;
+  }
+  main .popularProductSection {
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=index.css.map */

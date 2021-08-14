@@ -1,8 +1,14 @@
+@import "util.scss";
 $blue: #6ec3ed;
 
 .wrap {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 header {
@@ -10,23 +16,96 @@ header {
     height: 57px;
     display: flex;
     justify-content: center;
-  }
-  .topBannerSection::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    height: 57px;
-    width: 100vw;
     background-color: $blue;
   }
   .titleSection {
     display: flex;
+    background: rgbConverter();
+    height: 91px;
     .title {
       font-size: 30px;
     }
     .mainCategoryWrap {
       display: flex;
+    }
+  }
+  .categorySection {
+    background: rgbConverter();
+    height: 56px;
+  }
+}
+main {
+  position: relative;
+  .bannerSection {
+    background: rgbConverter();
+    height: 427px; //베너이미지 + 베너설명
+    order: 1;
+  }
+  .bannerDescriptSection {
+    background: rgbConverter();
+    height: 46px; //베너이미지 + 베너설명
+    order: 1;
+  }
+  .todayDealSection {
+    background: rgbConverter();
+    height: 500px;
+    order: 1;
+  }
+  .categorySection {
+    background: rgbConverter();
+    height: 191px;
+    order: 2;
+  }
+  .popularKeywordSection {
+    background: rgbConverter();
+    height: 170px;
+    order: 2;
+  }
+  .popularProductSection {
+    background: rgbConverter();
+    height: 552px;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  //max: PC우선
+  .wrap {
+    padding: 0 16px;
+  }
+  header {
+    .topBannerSection {
+      display: none;
+    }
+    .titleSection {
+      height: 57px;
+    }
+    .categorySection {
+      height: 48px;
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    .bannerSection {
+      height: 100%;
+    }
+    .bannerDescriptSection {
+      display: none;
+    }
+    .todayDealSection {
+      height: 100%;
+      order: 2;
+    }
+    .categorySection {
+      height: 100%;
+      order: 1;
+    }
+    .popularKeywordSection {
+      height: 100%;
+    }
+    .popularProductSection {
+      height: 100%;
     }
   }
 }
