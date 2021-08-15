@@ -1,0 +1,85 @@
+$BREAKPOINT_TABLET: 995px;
+$BREAKPOINT_MOBILE: 745px;
+
+@media screen and (max-width: $BREAKPOINT_TABLET) {
+  header .titleSection .right {
+    justify-content: flex-end;
+    .search {
+      border: none;
+      .searchInput,
+      .fa-camera {
+        display: none;
+      }
+    }
+  }
+  .bannerDescriptSection {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $BREAKPOINT_MOBILE) {
+  //max: PC우선
+  .wrap {
+    padding: 0 16px;
+  }
+  header {
+    .topBannerSection {
+      display: none;
+      .navBtn {
+        font-size: 21px;
+      }
+    }
+    .titleSection {
+      height: 57px;
+      justify-content: space-around;
+      .navBtn,
+      .left,
+      .right {
+        flex: 1;
+      }
+      .mainCategoryWrap,
+      .login ul {
+        display: none;
+      }
+    }
+    .categorySection {
+      height: 48px;
+      ul li + li {
+        margin-left: 18px;
+      }
+    }
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    .bannerSection {
+      height: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .bannerDescriptSection {
+      display: none;
+    }
+    .todayDealSection {
+      height: 100%;
+      order: 2;
+    }
+    .categorySection {
+      height: 100%;
+      order: 1;
+    }
+    .popularKeywordSection {
+      height: 100%;
+    }
+    .popularProductSection {
+      height: 100%;
+    }
+  }
+  section.pl15 {
+    padding-left: 0px;
+  }
+  section.pr15 {
+    padding-right: 0px;
+  }
+}

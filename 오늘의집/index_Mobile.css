@@ -1,0 +1,94 @@
+@media screen and (max-width: 995px) {
+  header .titleSection .right {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  header .titleSection .right .search {
+    border: none;
+  }
+  header .titleSection .right .search .searchInput,
+  header .titleSection .right .search .fa-camera {
+    display: none;
+  }
+  .bannerDescriptSection {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .wrap {
+    padding: 0 16px;
+  }
+  header .topBannerSection {
+    display: none;
+  }
+  header .topBannerSection .navBtn {
+    font-size: 21px;
+  }
+  header .titleSection {
+    height: 57px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  header .titleSection .navBtn,
+  header .titleSection .left,
+  header .titleSection .right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  header .titleSection .mainCategoryWrap,
+  header .titleSection .login ul {
+    display: none;
+  }
+  header .categorySection {
+    height: 48px;
+  }
+  header .categorySection ul li + li {
+    margin-left: 18px;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .bannerSection {
+    height: 100%;
+  }
+  main .bannerSection img {
+    width: 100%;
+  }
+  main .bannerDescriptSection {
+    display: none;
+  }
+  main .todayDealSection {
+    height: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  main .categorySection {
+    height: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  main .popularKeywordSection {
+    height: 100%;
+  }
+  main .popularProductSection {
+    height: 100%;
+  }
+  section.pl15 {
+    padding-left: 0px;
+  }
+  section.pr15 {
+    padding-right: 0px;
+  }
+}
+/*# sourceMappingURL=index_Mobile.css.map */
