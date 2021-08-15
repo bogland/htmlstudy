@@ -140,6 +140,7 @@ table {
 body {
   font-family: "Noto Sans KR", sans-serif;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {
