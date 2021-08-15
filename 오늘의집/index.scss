@@ -1,7 +1,27 @@
-@import "util.scss";
+@import "util";
 $blue: #6ec3ed;
 $red: #ea7f7a;
 $padding: 15px;
+$PCWIDTH: 2539px;
+
+$MOBILEWIDTH: 859px;
+$BREAKPOINT_MOBILE: 745px;
+$BREAKPOINT_TABLET: 995px;
+
+@function getW($pixel) {
+  $vw: $pixel / $PCWidth * 100vw;
+  @if ($vw>100) {
+    $vw: 100;
+  }
+  @return $vw;
+}
+@function getH($pixel) {
+  $vh: $pixel / $PCWidth * 100vw;
+  @if ($vh>100) {
+    $vh: 100;
+  }
+  @return $pixel / $PCWidth * 100vw;
+}
 
 .wrap {
   max-width: 1278px;
@@ -29,9 +49,8 @@ header {
     background-color: $blue;
     .closeBtn {
       position: absolute;
-      right: 0;
-      height: 21px;
-      width: 21px;
+      right: 17px;
+      font-size: 21px;
       color: white;
       top: calc(57px / 2 - (21px / 2));
     }
@@ -41,6 +60,12 @@ header {
     align-items: center;
     height: 91px;
     background: rgbConverter();
+    .navBtn {
+      display: none;
+    }
+    .icon {
+      font-size: 21px;
+    }
     .left {
       display: flex;
       align-items: center;
@@ -103,6 +128,7 @@ header {
   .categorySection {
     background: rgbConverter();
     height: 56px;
+    overflow-x: auto;
     ul {
       height: 100%;
       display: flex;
@@ -174,8 +200,19 @@ main {
     order: 2;
   }
 }
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: $BREAKPOINT_TABLET) {
+  header .titleSection .right {
+    justify-content: flex-end;
+    .search {
+      border: none;
+      .searchInput,
+      .fa-camera {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: $BREAKPOINT_MOBILE) {
   //max: PC우선
   .wrap {
     padding: 0 16px;
@@ -183,9 +220,22 @@ main {
   header {
     .topBannerSection {
       display: none;
+      .navBtn {
+        font-size: 21px;
+      }
     }
     .titleSection {
       height: 57px;
+      justify-content: space-around;
+      .navBtn,
+      .left,
+      .right {
+        flex: 1;
+      }
+      .mainCategoryWrap,
+      .login ul {
+        display: none;
+      }
     }
     .categorySection {
       height: 48px;

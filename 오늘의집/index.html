@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
@@ -20,6 +23,7 @@
         <i class="fas fa-times closeBtn"></i>
       </section>
       <section class="titleSection pl15">
+        <i class="fas fa-bars navBtn"></i>
         <div class="left">
           <span class="title">오늘의집</span>
           <ui class="mainCategoryWrap">
@@ -32,12 +36,13 @@
         </div>
         <div class="right">
           <div class="search">
-            <i class="fas fa-search"></i>
-            <input placeholder="스토어 검색" />
-            <i class="fas fa-camera"></i>
+            <i class="fas fa-search icon"></i>
+            <input class="searchInput" placeholder="스토어 검색" />
+            <i class="fas fa-camera icon"></i>
           </div>
+
           <div class="login">
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-shopping-cart icon"></i>
             <ul>
               <li>로그인</li>
               <li>회원가입</li>
