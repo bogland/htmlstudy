@@ -11,5 +11,6 @@ RUN git pull origin master
 RUN cp -r 오늘의집/* .
 #mv대신 cp를 이용하면 히든파일까지 보내짐
 RUN rm -rf 오늘의집
+VOLUME /mnt/c/project/htmlstudy/오늘의집/test
 
 #COPY . /usr/share/nginx/html
