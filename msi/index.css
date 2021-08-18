@@ -1,0 +1,195 @@
+body {
+  background-color: white;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+#startBanner {
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.squareWrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+  width: 80%;
+  overflow: hidden;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-animation: widen_wrap 1s ease;
+          animation: widen_wrap 1s ease;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6e4186), to(#b04893));
+  background: linear-gradient(to bottom, #6e4186, #b04893);
+}
+
+@-webkit-keyframes widen_wrap {
+  0% {
+    height: 20px;
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    height: 80%;
+    width: 80%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  80% {
+    height: 80%;
+    width: 80%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes widen_wrap {
+  0% {
+    height: 20px;
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  50% {
+    height: 80%;
+    width: 80%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  80% {
+    height: 80%;
+    width: 80%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.squareWrap .square {
+  position: absolute;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes rotate_image {
+  20% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  45% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  70% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  95% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_image {
+  20% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  45% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  70% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  95% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.squareWrap .square:nth-child(1) {
+  margin-top: 15px;
+  -webkit-animation: rotate_image 3.01s ease-out infinite;
+          animation: rotate_image 3.01s ease-out infinite;
+  opacity: 133.2%;
+}
+
+.squareWrap .square:nth-child(2) {
+  margin-top: 30px;
+  -webkit-animation: rotate_image 3.02s ease-out infinite;
+          animation: rotate_image 3.02s ease-out infinite;
+  opacity: 99.9%;
+}
+
+.squareWrap .square:nth-child(3) {
+  margin-top: 45px;
+  -webkit-animation: rotate_image 3.03s ease-out infinite;
+          animation: rotate_image 3.03s ease-out infinite;
+  opacity: 66.6%;
+}
+
+.squareWrap .square:nth-child(4) {
+  margin-top: 60px;
+  -webkit-animation: rotate_image 3.04s ease-out infinite;
+          animation: rotate_image 3.04s ease-out infinite;
+  opacity: 33.3%;
+}
+
+.squareWrap .square:nth-child(5) {
+  margin-top: 75px;
+  -webkit-animation: rotate_image 3.05s ease-out infinite;
+          animation: rotate_image 3.05s ease-out infinite;
+  opacity: 0%;
+}
+/*# sourceMappingURL=index.css.map */

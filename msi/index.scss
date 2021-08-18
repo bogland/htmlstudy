@@ -1,0 +1,96 @@
+body {
+  background-color: white;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+#startBanner {
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.squareWrap {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80%;
+  width: 80%;
+  overflow: hidden;
+  transform: rotate(0deg);
+
+  animation: widen_wrap 1s ease;
+
+  @keyframes widen_wrap {
+    0% {
+      height: 20px;
+      transform: rotate(20deg);
+    }
+    50% {
+      height: 80%;
+      width: 80%;
+      transform: rotate(0deg);
+    }
+    80% {
+      height: 80%;
+      width: 80%;
+      transform: rotate(0deg);
+    }
+    // 100% {
+    //   height: 100%;
+    //   transform: rotate(0deg);
+    // }
+  }
+
+  background: linear-gradient(to bottom, #6e4186, #b04893);
+  .square {
+    position: absolute;
+    transform-origin: 50% 50%;
+
+    @keyframes rotate_image {
+      20% {
+        transform: rotate(90deg);
+      }
+      25% {
+        transform: rotate(90deg);
+      }
+
+      45% {
+        transform: rotate(180deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+
+      70% {
+        transform: rotate(270deg);
+      }
+      75% {
+        transform: rotate(270deg);
+      }
+
+      95% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  @for $i from 0 through 4 {
+    $c: $i + 1;
+    .square:nth-child(#{$c}) {
+      margin-top: $c * 15px;
+      animation: rotate_image (3s + $c * 0.01s) ease-out infinite;
+      opacity: 33.3% * (4-$i);
+    }
+  }
+}
