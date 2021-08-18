@@ -1,18 +1,23 @@
 version: "3.9"
 services:
   web:
-    build: .
+    build: ./todayhouse
     ports:
       - "80:80"
     networks:
-    - backend
-  # api:
+      - frontend
+  api:
+    build: ./api
+      - "5000:5000"
+    networks:
+      - frontend
+      - backend
   db: # 서비스 명
     image: mysql # 사용할 이미지
     restart: always
     container_name: mysql-test # 컨테이너 이름 설정
-    ports:
-      - "3307:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)  <- 컨테이너 내부는 무조건 3306
+    # ports: #컨테이너에서만 접근할 수 있도록 주석처리
+    #   - "3307:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)  <- 컨테이너 내부는 무조건 3306
     environment: # -e 옵션
       MYSQL_ROOT_PASSWORD: "0000"
       MYSQL_USER: "test"
@@ -25,8 +30,10 @@ services:
     volumes:
       - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
     networks:
-    - backend
+      - backend
 
 networks: # 가장 기본적인 bridge 네트워크
+  frontend:
+    driver: bridge
   backend:
     driver: bridge
