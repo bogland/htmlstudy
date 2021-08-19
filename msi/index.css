@@ -38,8 +38,8 @@ body {
           transform: rotate(0deg);
   -webkit-animation: widen_wrap 1s ease;
           animation: widen_wrap 1s ease;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6e4186), to(#b04893));
-  background: linear-gradient(to bottom, #6e4186, #b04893);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9e61be), to(#d8596e));
+  background: linear-gradient(to bottom, #9e61be, #d8596e);
 }
 
 @-webkit-keyframes widen_wrap {

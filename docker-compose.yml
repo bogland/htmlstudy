@@ -8,6 +8,7 @@ services:
       - frontend
   api:
     build: ./api
+    ports:
       - "5000:5000"
     networks:
       - frontend
@@ -22,7 +23,7 @@ services:
       MYSQL_ROOT_PASSWORD: "0000"
       MYSQL_USER: "test"
       MYSQL_PASSWORD: "0000"
-      MYSQL_DATABASE: "test" 
+      MYSQL_DATABASE: "test"
       TZ: Asia/Seoul
     command: # 명령어 실행
       - --character-set-server=utf8mb4
@@ -31,6 +32,8 @@ services:
       - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
     networks:
       - backend
+    ports:
+      - "3307:3306"
 
 networks: # 가장 기본적인 bridge 네트워크
   frontend:
