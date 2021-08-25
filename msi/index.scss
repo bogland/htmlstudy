@@ -88,7 +88,7 @@ body {
   @for $i from 0 through 4 {
     $c: $i + 1;
     .square:nth-child(#{$c}) {
-      margin-top: $c * 15px;
+      margin-top: $c * 30px;
       animation: rotate_image (3s + $c * 0.01s) ease-out infinite;
       opacity: 33.3% * (4-$i);
     }
