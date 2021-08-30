@@ -10,13 +10,25 @@
   </head>
   <body>
     <main>
-      <div class="wrapper">
-        <div class="one">One</div>
-        <div class="two">Two</div>
-        <div class="three">Three</div>
-        <div class="four">Four</div>
-        <div class="five">Five</div>
-        <div class="six">Six</div>
+      <div
+        class="container"
+        ondragenter="onDragEnter(event)"
+        ondrag="onDrag(event)"
+        ondragend="onDragEnd(event)"
+      >
+        <ol class="item headerColumns">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+        </ol>
+        <ol class="item headerRows">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+        </ol>
+        <section class="item content">content</section>
       </div>
       <!-- <section class="contentHeader">
         <ol class="headerCol">
@@ -43,5 +55,19 @@
         </ol>
       </section> -->
     </main>
+    <script>
+      function onDragEnter() {
+        console.log("onDragEnter");
+        document.body.style.cursor = "grab";
+      }
+      function onDrag() {
+        console.log("onDrag");
+        document.body.style.cursor = "grab";
+      }
+      function onDragEnd() {
+        console.log("onDragEnd");
+        document.body.style.cursor = "none";
+      }
+    </script>
   </body>
 </html>
