@@ -12,9 +12,9 @@
     <main>
       <div
         class="container"
-        ondragenter="onDragEnter(event)"
+        onmousedown="onMouseDown(event)"
+        onmouseup="onMouseUp(event)"
         ondrag="onDrag(event)"
-        ondragend="onDragEnd(event)"
       >
         <ol class="item headerColumns">
           <li>A</li>
@@ -23,10 +23,10 @@
           <li>D</li>
         </ol>
         <ol class="item headerRows">
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-          <li>D</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
         </ol>
         <section class="item content">content</section>
       </div>
@@ -56,18 +56,48 @@
       </section> -->
     </main>
     <script>
-      function onDragEnter() {
-        console.log("onDragEnter");
-        document.body.style.cursor = "grab";
+      function onDrag(event) {
+        console.log("onDrag", event);
       }
-      function onDrag() {
-        console.log("onDrag");
-        document.body.style.cursor = "grab";
+      function onMouseUp(event) {
+        console.log("onMouseUp", event);
       }
-      function onDragEnd() {
-        console.log("onDragEnd");
-        document.body.style.cursor = "none";
+      function onMouseDown(event) {
+        console.log("onMouseDown", event);
       }
+      class Info {
+        elementRows;
+        elementCols;
+        heightList = Array.from({ length: 4 }, (v, i) => 20);
+        widthList = Array.from({ length: 4 }, (v, i) => 30);
+        init = (rowHeaderElement, colHeaderElement) => {
+          this.elementRows = rowHeaderElement;
+          this.elementCols = colHeaderElement;
+        };
+
+        print = () => {
+          console.log(this.heightList);
+          console.log(this.widthList);
+          console.log(this.elementRows);
+          console.log(this.elementCols);
+        };
+        updateInfo = () => {
+          console.log(typeof this.elementRows.children);
+          Array.from(this.elementRows.children).map((ele, i) => {
+            ele.style.height = this.heightList[i] + "px";
+            ele.style.lineHeight = this.heightList[i] + "px";
+          });
+          Array.from(this.elementCols.children).map((ele, i) => {
+            ele.style.width = this.widthList[i] + "px";
+          });
+        };
+      }
+      info = new Info();
+      const headerColsElement = document.querySelector(".headerColumns");
+      const headerRowsElement = document.querySelector(".headerRows");
+      info.init(headerRowsElement, headerColsElement);
+      info.print();
+      info.updateInfo();
     </script>
   </body>
 </html>
