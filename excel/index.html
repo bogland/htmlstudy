@@ -14,7 +14,7 @@
         class="container"
         onmousedown="onMouseDown(event)"
         onmouseup="onMouseUp(event)"
-        ondrag="onDrag(event)"
+        onmousemove="onMouseMove(event)"
       >
         <ol class="item headerColumns">
           <li>A</li>
@@ -28,75 +28,120 @@
           <li>3</li>
           <li>4</li>
         </ol>
-        <section class="item content">content</section>
+        <section class="item content">
+          <span>1</span>
+          <span>1</span>
+          <span>1</span>
+          <span>1</span>
+          <span>2</span>
+          <span>2</span>
+          <span>2</span>
+          <span>2</span>
+          <span>3</span>
+          <span>3</span>
+          <span>3</span>
+          <span>3</span>
+          <span>4</span>
+          <span>4</span>
+          <span>4</span>
+          <span>4</span>
+        </section>
       </div>
-      <!-- <section class="contentHeader">
-        <ol class="headerCol">
-          <li></li>
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-          <li>D</li>
-        </ol>
-        <ol class="headerRow">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-        </ol>
-      </section>
-      <section class="content">
-        <ol class="row">
-          <li>가</li>
-          <li>나</li>
-          <li>다</li>
-          <li>라</li>
-        </ol>
-      </section> -->
     </main>
     <script>
-      function onDrag(event) {
-        console.log("onDrag", event);
+      function onMouseMove(event) {
+        if (!info.isOnDrag()) return;
+        console.log("마우스 무브 ");
+        const pos = { x: event.clientX, y: event.clientY };
+        info.moving(pos);
       }
       function onMouseUp(event) {
-        console.log("onMouseUp", event);
+        console.log("마우스 업 ");
+        const pos = { x: event.clientX, y: event.clientY };
+        info.moving(pos);
+        info.resetIndex();
       }
       function onMouseDown(event) {
-        console.log("onMouseDown", event);
+        const headerColsElement = document.querySelector(".headerColumns");
+        const headerRowsElement = document.querySelector(".headerRows");
+        const colIndex = [...headerColsElement.children].indexOf(event.target);
+        const rowIndex = [...headerRowsElement.children].indexOf(event.target);
+
+        const pos = { x: event.clientX, y: event.clientY };
+        let index = {
+          x: colIndex != -1 ? colIndex : -1,
+          y: rowIndex != -1 ? rowIndex : -1,
+        };
+        info.moveStart(index, pos);
       }
       class Info {
-        elementRows;
-        elementCols;
+        elementRows; //ol
+        elementCols; //ol
+        elementContent;
         heightList = Array.from({ length: 4 }, (v, i) => 20);
-        widthList = Array.from({ length: 4 }, (v, i) => 30);
-        init = (rowHeaderElement, colHeaderElement) => {
+        widthList = Array.from({ length: 4 }, (v, i) => 20);
+        preHeightList = [];
+        preWidthList = [];
+        prePos = { x: 0, y: 0 };
+        index = { x: -1, y: -1 };
+
+        init = (rowHeaderElement, colHeaderElement, contentElement) => {
           this.elementRows = rowHeaderElement;
           this.elementCols = colHeaderElement;
+          this.contentElement = contentElement;
         };
 
-        print = () => {
-          console.log(this.heightList);
-          console.log(this.widthList);
-          console.log(this.elementRows);
-          console.log(this.elementCols);
+        isOnDrag = () => {
+          if (this.index.x < 0 && this.index.y < 0) return false;
+          return true;
         };
+
         updateInfo = () => {
-          console.log(typeof this.elementRows.children);
-          Array.from(this.elementRows.children).map((ele, i) => {
+          [...this.elementRows.children].map((ele, i) => {
             ele.style.height = this.heightList[i] + "px";
             ele.style.lineHeight = this.heightList[i] + "px";
           });
-          Array.from(this.elementCols.children).map((ele, i) => {
+          [...this.elementCols.children].map((ele, i) => {
             ele.style.width = this.widthList[i] + "px";
           });
+
+          const strHeight = this.heightList.join("px ") + "px";
+          this.contentElement.style.gridTemplateRows = strHeight;
+          const strWidth = this.widthList.join("px ") + "px";
+          this.contentElement.style.gridTemplateColumns = strWidth;
+        };
+
+        moveStart = (index, pos) => {
+          this.index = index;
+          this.prePos = pos;
+          this.preHeightList = this.heightList.slice();
+          this.preWidthList = this.widthList.slice();
+        };
+
+        moving = (pos) => {
+          if (!this.isOnDrag()) return;
+          const gapX = pos.x - this.prePos.x;
+          const gapY = pos.y - this.prePos.y;
+          if (this.index.x >= 0) {
+            const curWidth = this.preWidthList[this.index.x];
+            this.widthList[this.index.x] = curWidth + gapX;
+          }
+          if (this.index.y >= 0) {
+            const curHeight = this.preHeightList[this.index.y];
+            this.heightList[this.index.y] = curHeight + gapY;
+          }
+          info.updateInfo();
+        };
+
+        resetIndex = () => {
+          this.index = { x: -1, y: -1 };
         };
       }
       info = new Info();
       const headerColsElement = document.querySelector(".headerColumns");
       const headerRowsElement = document.querySelector(".headerRows");
-      info.init(headerRowsElement, headerColsElement);
-      info.print();
+      const contentElement = document.querySelector(".content");
+      info.init(headerRowsElement, headerColsElement, contentElement);
       info.updateInfo();
     </script>
   </body>
