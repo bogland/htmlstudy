@@ -1,4 +1,5 @@
 html, vanilla javascript, scss 연구용
+docker 기반 reverse proxy 적용
 
 # 엑셀 
 http://3.38.81.33/excel 
