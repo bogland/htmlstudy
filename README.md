@@ -1,4 +1,5 @@
-htmlStudy 
+html, vanilla javascript, scss 연구용
+
 # 엑셀 
 http://3.38.81.33/excel 
 - 헤더 이동 
