@@ -44,7 +44,7 @@ header .titleSection {
       -ms-flex-align: center;
           align-items: center;
   height: 91px;
-  background: rgba(245, 245, 16, 0.2);
+  background: rgba(54, 94, 106, 0.2);
 }
 
 header .titleSection .navBtn {
@@ -151,7 +151,7 @@ header .titleSection .login ul li + li {
 }
 
 header .categorySection {
-  background: rgba(249, 218, 129, 0.2);
+  background: rgba(116, 35, 248, 0.2);
   height: 56px;
   overflow-x: auto;
 }
@@ -193,7 +193,7 @@ main .bannerSection {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: rgba(24, 73, 227, 0.2);
+  background: rgba(49, 43, 112, 0.2);
   height: 427px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -202,7 +202,7 @@ main .bannerSection {
 }
 
 main .bannerDescriptSection {
-  background: rgba(6, 222, 178, 0.2);
+  background: rgba(113, 79, 191, 0.2);
   height: 46px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -232,7 +232,7 @@ main .bannerDescriptSection ul li:hover {
 }
 
 main .todayDealSection {
-  background: rgba(176, 38, 35, 0.2);
+  background: rgba(180, 5, 231, 0.2);
   height: 500px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -240,7 +240,7 @@ main .todayDealSection {
 }
 
 main .categorySection {
-  background: rgba(96, 61, 74, 0.2);
+  background: rgba(221, 105, 173, 0.2);
   height: 191px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -248,7 +248,7 @@ main .categorySection {
 }
 
 main .popularKeywordSection {
-  background: rgba(71, 73, 13, 0.2);
+  background: rgba(72, 180, 40, 0.2);
   height: 170px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -256,7 +256,7 @@ main .popularKeywordSection {
 }
 
 main .popularProductSection {
-  background: rgba(172, 161, 39, 0.2);
+  background: rgba(90, 106, 180, 0.2);
   height: 552px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
