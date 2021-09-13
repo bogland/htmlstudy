@@ -1,9 +1,9 @@
 html, vanilla javascript, scss 연구용  
-docker 기반 reverse proxy 적용  
+docker 기반 reverse proxy 및 jenkins 적용  
 
 # 엑셀 
 http://3.38.81.33/excel 
-- 헤더 이동 
+- grid layout 기반 헤더 이동
 
 # MSI 
 http://3.38.81.33/msi 
