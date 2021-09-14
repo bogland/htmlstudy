@@ -62,6 +62,7 @@
         const target = document.querySelector(
           `.content>span:nth-of-type(${info.activeIndex + 1})`
         );
+        // e.clipboardData.setData("text/html", target.innerHTML);
         e.clipboardData.setData("text/plain", target.innerHTML);
         e.preventDefault();
       }
