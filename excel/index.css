@@ -1,3 +1,28 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal.active .edit {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.modal.active .edit input {
+  font-size: 12px;
+  height: 100%;
+  width: 100%;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
@@ -9,31 +34,35 @@
 }
 
 .container .item:nth-child(1) {
-  background: rgba(136, 36, 94, 0.2);
+  background: rgba(108, 132, 201, 0.2);
 }
 
 .container .item:nth-child(2) {
-  background: rgba(60, 181, 176, 0.2);
+  background: rgba(168, 158, 33, 0.2);
 }
 
 .container .item:nth-child(3) {
-  background: rgba(94, 12, 28, 0.2);
+  background: rgba(27, 80, 238, 0.2);
 }
 
 .container .item:nth-child(4) {
-  background: rgba(63, 165, 77, 0.2);
+  background: rgba(28, 80, 107, 0.2);
 }
 
 .container .item:nth-child(5) {
-  background: rgba(247, 240, 73, 0.2);
+  background: rgba(198, 101, 244, 0.2);
 }
 
 .container .item:nth-child(6) {
-  background: rgba(158, 196, 42, 0.2);
+  background: rgba(148, 189, 249, 0.2);
 }
 
 .container .item:nth-child(7) {
-  background: rgba(38, 34, 87, 0.2);
+  background: rgba(253, 114, 117, 0.2);
+}
+
+.content span.selected {
+  border: solid 1px red;
 }
 
 .headerColumns {
@@ -151,9 +180,8 @@
 .content span {
   text-align: center;
   height: 100%;
+  border: solid 1px black;
   grid-gap: 1px;
-  -webkit-box-shadow: 0 0 0 1px black;
-          box-shadow: 0 0 0 1px black;
   border-collapse: collapse;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

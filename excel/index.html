@@ -28,7 +28,11 @@
           <li>3</li>
           <li>4</li>
         </ol>
-        <section class="item content">
+        <section
+          class="item content"
+          ondblclick="editContent(event)"
+          onclick="selectContent(event)"
+        >
           <span>1</span>
           <span>1</span>
           <span>1</span>
@@ -47,8 +51,51 @@
           <span>4</span>
         </section>
       </div>
+      <div class="modal" onclick="activateModalOff(event)">
+        <!-- <span class="edit"> -->
+        <input class="edit" onkeydown="completeChange(event)" />
+        <!-- </span> -->
+      </div>
     </main>
     <script>
+      function completeChange(event) {
+        if (event.which != 13) return;
+        const target = document.querySelector(
+          `.content>span:nth-of-type(${info.index + 1})`
+        );
+      }
+      function activateModalOff(event) {
+        event.target.classList.remove("active");
+      }
+      function selectContent(event) {
+        const contentElement = document.querySelector(".content");
+        const index = [...contentElement.children].indexOf(event.target);
+        const child = document.querySelector(
+          `.content>span:nth-of-type(${index + 1})`
+        );
+        [...contentElement.children].forEach((v) => {
+          v.classList.remove("selected");
+        });
+        child.classList.add("selected");
+      }
+      function editContent(event) {
+        const contentElement = document.querySelector(".content");
+        const index = [...contentElement.children].indexOf(event.target);
+        console.log(index);
+        const target = document.querySelector(
+          `.content>span:nth-of-type(${index + 1})`
+        );
+        const { top, left, width, height } = target.getBoundingClientRect();
+        modalElement = document.querySelector(".modal");
+        modalElement.classList.add("active");
+        modalText = modalElement.children[0];
+        modalText.style.top = top + "px";
+        modalText.style.left = left + "px";
+        modalText.style.height = height + "px";
+        modalText.style.width = width + "px";
+        modalText.value = target.innerHTML;
+        info.activeIndex = index;
+      }
       function onMouseMove(event) {
         if (!info.isOnDrag()) return;
         console.log("마우스 무브 ");
@@ -84,6 +131,8 @@
         preWidthList = [];
         prePos = { x: 0, y: 0 };
         index = { x: -1, y: -1 };
+
+        activeIndex = -1;
 
         init = (rowHeaderElement, colHeaderElement, contentElement) => {
           this.elementRows = rowHeaderElement;
