@@ -116,6 +116,7 @@
   grid-template-rows: repeat(4, 20px);
   grid-template-columns: repeat(4, 20px);
   span {
+    overflow: hidden;
     text-align: center;
     height: 100%;
     border: solid 1px black;

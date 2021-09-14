@@ -34,31 +34,31 @@
 }
 
 .container .item:nth-child(1) {
-  background: rgba(108, 132, 201, 0.2);
+  background: rgba(243, 253, 71, 0.2);
 }
 
 .container .item:nth-child(2) {
-  background: rgba(168, 158, 33, 0.2);
+  background: rgba(126, 152, 118, 0.2);
 }
 
 .container .item:nth-child(3) {
-  background: rgba(27, 80, 238, 0.2);
+  background: rgba(168, 250, 149, 0.2);
 }
 
 .container .item:nth-child(4) {
-  background: rgba(28, 80, 107, 0.2);
+  background: rgba(213, 89, 197, 0.2);
 }
 
 .container .item:nth-child(5) {
-  background: rgba(198, 101, 244, 0.2);
+  background: rgba(166, 184, 119, 0.2);
 }
 
 .container .item:nth-child(6) {
-  background: rgba(148, 189, 249, 0.2);
+  background: rgba(122, 80, 67, 0.2);
 }
 
 .container .item:nth-child(7) {
-  background: rgba(253, 114, 117, 0.2);
+  background: rgba(223, 111, 135, 0.2);
 }
 
 .content span.selected {
@@ -178,6 +178,7 @@
 }
 
 .content span {
+  overflow: hidden;
   text-align: center;
   height: 100%;
   border: solid 1px black;

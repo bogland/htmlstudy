@@ -51,20 +51,49 @@
           <span>4</span>
         </section>
       </div>
-      <div class="modal" onclick="activateModalOff(event)">
+      <div class="modal" onclick="closeModal(event)">
         <!-- <span class="edit"> -->
         <input class="edit" onkeydown="completeChange(event)" />
         <!-- </span> -->
       </div>
     </main>
     <script>
+      function copyCell(e) {
+        const target = document.querySelector(
+          `.content>span:nth-of-type(${info.activeIndex + 1})`
+        );
+        e.clipboardData.setData("text/plain", target.innerHTML);
+        e.preventDefault();
+      }
+      function pasteCell(e) {
+        clipdata = e.clipboardData || window.clipboardData;
+        const target = document.querySelector(
+          `.content>span:nth-of-type(${info.activeIndex + 1})`
+        );
+        target.innerHTML = clipdata.getData("text/plain");
+        e.preventDefault();
+      }
+      function registerCopyEvent(e) {
+        document.removeEventListener("copy", copyCell);
+        document.removeEventListener("paste", pasteCell);
+        document.addEventListener("copy", copyCell);
+        document.addEventListener("paste", pasteCell);
+      }
+
       function completeChange(event) {
         if (event.which != 13) return;
         const target = document.querySelector(
-          `.content>span:nth-of-type(${info.index + 1})`
+          `.content>span:nth-of-type(${info.activeIndex + 1})`
         );
+        target.innerHTML = event.target.value;
+        modalElement = document.querySelector(".modal");
+        modalElement.classList.remove("active");
       }
-      function activateModalOff(event) {
+      function closeModal(event) {
+        const target = document.querySelector(
+          `.content>span:nth-of-type(${info.activeIndex + 1})`
+        );
+        target.innerHTML = document.querySelector(".edit").value;
         event.target.classList.remove("active");
       }
       function selectContent(event) {
@@ -77,6 +106,9 @@
           v.classList.remove("selected");
         });
         child.classList.add("selected");
+
+        info.activeIndex = index;
+        registerCopyEvent(event);
       }
       function editContent(event) {
         const contentElement = document.querySelector(".content");
@@ -103,7 +135,7 @@
         info.moving(pos);
       }
       function onMouseUp(event) {
-        console.log("마우스 업 ");
+        console.log("마우스 업!! ");
         const pos = { x: event.clientX, y: event.clientY };
         info.moving(pos);
         info.resetIndex();
