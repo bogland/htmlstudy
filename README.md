@@ -3,7 +3,8 @@ docker 기반 reverse proxy 및 jenkins 적용
 
 # 엑셀 
 http://3.38.81.33/excel 
-- grid layout 기반 헤더 이동
+- grid layout 기반 헤더 이동  
+- cell edit 및 copy & paste  
 
 # MSI 
 http://3.38.81.33/msi 
@@ -11,5 +12,4 @@ http://3.38.81.33/msi
 
 # 오늘의집  
 http://3.38.81.33/todayhouse  
-### 기능  
 - PC 및 모바일 반응형  
