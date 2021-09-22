@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .canvas {
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="canvas" width="600" height="400"
+      >이 브라우저는 캔버스를 지원하지 않습니다.</canvas
+    >
+    <script>
+      const canvas = document.querySelector(".canvas");
+      const context = canvas.getContext("2d");
+      let xPos = 10;
+      let count = 0;
+      let timerId = 0;
+
+      function draw() {
+        timerId = window.requestAnimationFrame(draw); //60fps를 맞춰서 호출
+        if (count++ % 2 != 0) return; //30 fps
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.beginPath();
+        context.arc(xPos, 150, 10, 0, Math.PI * 2, false);
+        context.fill();
+        xPos += 5;
+      }
+      draw();
+      canvas.addEventListener("click", () => {
+        cancelAnimationFrame(timerId);
+      });
+    </script>
+  </body>
+</html>
