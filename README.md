@@ -1,5 +1,5 @@
 html, vanilla javascript, scss 연구용  
-docker 기반 reverse proxy 및 jenkins 적용
+docker 기반 reverse proxy 및 jenkins 적용  
 
 # 엑셀 
 http://3.38.48.191/excel 
