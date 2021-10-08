@@ -58,7 +58,7 @@ header {
     display: flex;
     align-items: center;
     height: 91px;
-    background: rgbConverter();
+
     .navBtn {
       display: none;
     }
@@ -125,7 +125,6 @@ header {
     }
   }
   .categorySection {
-    background: rgbConverter();
     height: 56px;
     overflow-x: auto;
     ul {
@@ -155,13 +154,11 @@ main {
     display: flex;
     justify-content: center;
 
-    background: rgbConverter();
     height: 427px; //베너이미지 + 베너설명
     order: 1;
     overflow: hidden;
   }
   .bannerDescriptSection {
-    background: rgbConverter();
     height: 46px; //베너이미지 + 베너설명
     order: 1;
     ul {
@@ -179,22 +176,18 @@ main {
     }
   }
   .todayDealSection {
-    background: rgbConverter();
     height: 500px;
     order: 1;
   }
   .categorySection {
-    background: rgbConverter();
     height: 191px;
     order: 2;
   }
   .popularKeywordSection {
-    background: rgbConverter();
     height: 170px;
     order: 2;
   }
   .popularProductSection {
-    background: rgbConverter();
     height: 552px;
     order: 2;
   }
