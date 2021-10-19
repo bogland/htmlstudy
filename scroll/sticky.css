@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .imgBx {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  height: 1vh;
+}
+
+section .imgBx img {
+  width: 100%;
+}
+
+section .storyBx {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+}
+/*# sourceMappingURL=sticky.css.map */

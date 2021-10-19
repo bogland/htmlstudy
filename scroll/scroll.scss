@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+
+  .section {
+    height: 100vh;
+    background-blend-mode: multiply;
+    scroll-snap-align: start;
+    &:nth-child(1) {
+      background: #f00 url(image/bg1.png);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    &:nth-child(2) {
+      background: #ff0 url(image/bg2.png);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    &:nth-child(3) {
+      background: #0f0 url(image/bg3.png);
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  }
+}

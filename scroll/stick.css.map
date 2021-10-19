@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACX;;AAED,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAI;CAId;;AALD,AAEE,OAFK,CAEL,MAAM,CAAC;EACL,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "stick.scss"
+    ],
+    "names": [],
+    "file": "stick.css"
+}

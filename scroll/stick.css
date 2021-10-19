@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .imgBx {
+  position: -webkit-sticky;
+  position: sticky;
+}
+/*# sourceMappingURL=stick.css.map */
