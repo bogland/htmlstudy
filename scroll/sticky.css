@@ -12,11 +12,11 @@ section {
 section .imgBx {
   position: -webkit-sticky;
   position: sticky;
+  height: 100vh;
   top: 0;
   -webkit-box-flex: 50%;
       -ms-flex: 50%;
           flex: 50%;
-  height: 1vh;
 }
 
 section .imgBx img {

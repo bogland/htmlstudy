@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <title onclick="onTitle()">오늘의집!</title>
+    <style></style>
+  </head>
+  <body>
+    <header class="wrap">
+      <section class="topBannerSection fullWidth">
+        <img src="https://placeimg.com/320/57/any" />
+        <i class="fas fa-times closeBtn"></i>
+      </section>
+      <section class="titleSection pl15">
+        <i class="fas fa-bars navBtn"></i>
+        <div class="left">
+          <span class="title">오늘의집!</span>
+          <ui class="mainCategoryWrap">
+            <li class="mainCategory active" data-category="community">
+              커뮤니티
+            </li>
+            <li class="mainCategory" data-category="store">스토어</li>
+            <li class="mainCategory" data-category="interior">인테리어시공</li>
+          </ui>
+        </div>
+        <div class="right">
+          <div class="search">
+            <i class="fas fa-search icon"></i>
+            <input class="searchInput" placeholder="스토어 검색" />
+            <i class="fas fa-camera icon"></i>
+          </div>
+
+          <div class="login">
+            <i class="fas fa-shopping-cart icon"></i>
+            <ul>
+              <li>로그인</li>
+              <li>회원가입</li>
+              <li>고객센터</li>
+            </ul>
+          </div>
+          <div class="writeBtn"></div>
+        </div>
+      </section>
+      <section class="categorySection pl15">
+        <ul>
+          <li>스토어홈<i class="new fas fa-plus-circle"></i></li>
+          <li>카테고리</li>
+          <li>베스트</li>
+          <li>오늘의딜</li>
+          <li>시즌오프</li>
+          <li>지정일배송<i class="new fas fa-plus-circle"></i></li>
+          <li>원데이특가<i class="new fas fa-plus-circle"></i></li>
+          <li>프리미엄<i class="new fas fa-plus-circle"></i></li>
+          <li>기획전</li>
+        </ul>
+      </section>
+    </header>
+    <main class="wrap">
+      <section class="bannerSection fullWidth">
+        <img src="https://placeimg.com/2080/500/any" />
+      </section>
+      <section class="bannerDescriptSection pl15 pr15">
+        <ul>
+          <li>패브릭 원데이 세일</li>
+          <li>삼성 홈오피스</li>
+          <li>생활용품 슈퍼세일</li>
+          <li>오늘의집 특가창고</li>
+          <li>필터 OPEN 이벤트</li>
+          <li>신규 브랜드 런칭 특가</li>
+          <li>오늘의집 배송 OPEN</li>
+        </ul>
+      </section>
+      <section class="todayDealSection pl15">오늘의딜</section>
+      <section class="categorySection pl15">가구카테고리</section>
+      <section class="popularKeywordSection pl15">인기키워드</section>
+      <section class="popularProductSection pl15">인기상품</section>
+    </main>
+    <footer></footer>
+    <script>
+      const findSiblings = (element) => {
+        const allSiblings = Array.from(element.parentElement.children) // I got to know his mum (.parentElement), then the mum's children(.children)
+          .filter((sibling) => sibling.textContent !== element.textContent);
+        return allSiblings;
+      };
+
+      const clickArea = document.querySelector(".mainCategoryWrap");
+      clickArea.addEventListener("click", function (event) {
+        const category = event.target.dataset.category;
+        if (category) {
+          const allSiblings = findSiblings(event.target);
+          allSiblings.forEach((sibling) => {
+            sibling.classList.remove("active");
+          });
+          event.target.classList.add("active");
+        }
+      });
+
+      async function onTitle() {
+        alert("ㅎㅇㅎㅇ");
+        const res = await axios.get("localhost:5000/");
+        alert(JSON.stringify(res));
+      }
+    </script>
+  </body>
+</html>

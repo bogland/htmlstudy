@@ -1,196 +1,90 @@
 @import "util";
-
-$blue: #6ec3ed;
-$red: #ea7f7a;
-$padding: 15px;
-$PCWIDTH: 2539px;
-
-$MOBILEWIDTH: 859px;
-
-@function getW($pixel) {
-  $vw: $pixel / $PCWidth * 100vw;
-  @if ($vw>100) {
-    $vw: 100;
-  }
-  @return $vw;
-}
-@function getH($pixel) {
-  $vh: $pixel / $PCWidth * 100vw;
-  @if ($vh>100) {
-    $vh: 100;
-  }
-  @return $pixel / $PCWidth * 100vw;
-}
-
-.wrap {
-  max-width: 1278px;
+body {
   margin: 0 auto;
+  max-width: 1120px;
 }
-
-section.pl15 {
-  padding-left: 15px;
+header .top_pc {
+  display: none;
+  height: 6rem;
 }
-section.pr15 {
-  padding-right: 15px;
-}
-
-.fullWidth {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-header {
-  .topBannerSection {
-    position: relative;
-    height: 57px;
-    display: flex;
-    justify-content: center;
-    background-color: $blue;
-    .closeBtn {
-      position: absolute;
-      right: 17px;
-      font-size: 21px;
-      color: white;
-      top: calc(57px / 2 - (21px / 2));
-    }
+header .top {
+  border-bottom: 1px solid black;
+  .menuBtn {
+    background: rgbConverter();
+    height: 2rem;
+    width: 2rem;
+    flex: 0 0 auto; //기본값 : 0 1 auto
   }
-  .titleSection {
+  .title {
+    white-space: nowrap;
+  }
+  .iconWrap {
     display: flex;
-    align-items: center;
-    height: 91px;
-
-    .navBtn {
-      display: none;
+    .icon + .icon {
+      margin-left: 0.5rem;
     }
     .icon {
-      font-size: 21px;
-    }
-    .left {
-      display: flex;
-      align-items: center;
-      flex: 1;
-    }
-    .right {
-      display: flex;
-      align-items: center;
-      flex: 1;
-      justify-content: space-between;
-    }
-    .title {
-      font-size: 30px;
-      font-weight: bold;
-    }
-    .mainCategoryWrap {
-      display: flex;
-      li {
-        &:hover {
-          cursor: pointer;
-        }
-        margin-left: 37px;
-        font-weight: bold;
-        font-size: 19px;
-      }
-      li.active {
-        color: $blue;
-      }
-    }
-    .search {
-      display: flex;
-      border: solid 1px;
-      padding: 13px 14px;
-      input {
-        border: none;
-        background: rgba(255, 255, 255, 0);
-        padding-left: 10px;
-      }
-      i {
-        font-size: 21px;
-      }
-    }
-    .login {
-      display: flex;
-      ul {
-        display: flex;
-        li {
-          padding-left: 13px;
-          padding-right: 13px;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        li + li {
-          border-left: solid 1px;
-        }
-      }
+      background: rgbConverter();
+      height: 2rem;
+      width: 2rem;
     }
   }
-  .categorySection {
-    height: 56px;
-    overflow-x: auto;
-    ul {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      li {
-        &:hover {
-          cursor: pointer;
-        }
-        font-weight: bold;
-        .active {
-          color: $blue;
-        }
-        .new {
-          color: $red;
-        }
-      }
-      li + li {
-        margin-left: 27px;
-      }
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 5rem;
+  padding: 0 0.8rem;
+}
+header .category {
+  display: flex;
+  font-size: 1.3rem;
+  div {
+    padding: 0.8rem 0.4rem;
   }
 }
-main {
-  .bannerSection {
+
+main .banner {
+  width: 100vw;
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 380px;
+  }
+}
+main .productCategory {
+  background: rgbConverter();
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    border: solid black 1px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    flex: 1 1 25%;
+    height: 25vw;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
-    height: 427px; //베너이미지 + 베너설명
-    order: 1;
+    align-items: center;
     overflow: hidden;
-  }
-  .bannerDescriptSection {
-    height: 46px; //베너이미지 + 베너설명
-    order: 1;
-    ul {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      justify-content: space-between;
-      li {
-        &:hover {
-          cursor: pointer;
-        }
-        font-weight: bold;
-        padding: 15px 0;
-      }
+    img {
+      height: 5.2rem;
+      width: 5.2rem;
     }
-  }
-  .todayDealSection {
-    height: 500px;
-    order: 1;
-  }
-  .categorySection {
-    height: 191px;
-    order: 2;
-  }
-  .popularKeywordSection {
-    height: 170px;
-    order: 2;
-  }
-  .popularProductSection {
-    height: 552px;
-    order: 2;
   }
 }
 
-@import "index_mobile";
+@media (min-width: 620px) {
+  header .top {
+    display: none;
+  }
+  header .top_pc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  main .productCategory {
+    display: none;
+  }
+}

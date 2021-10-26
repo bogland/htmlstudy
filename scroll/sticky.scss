@@ -7,9 +7,9 @@ section {
   display: flex;
   .imgBx {
     position: sticky;
+    height: 100vh;
     top: 0;
     flex: 50%;
-    height: 1vh;
     img {
       width: 100%;
     }
