@@ -46,6 +46,7 @@ header .category {
 
 main .banner {
   width: 100vw;
+  margin-left: calc(-50vw + 50%);
   img {
     width: 100%;
     object-fit: cover;
@@ -86,5 +87,14 @@ main .productCategory {
   }
   main .productCategory {
     display: none;
+  }
+  main .banner{
+    width: 100vw;
+    height: 270px;
+  }
+  main .banner img {
+    width: 100%;
+    object-fit:cover;
+    height: 270px;
   }
 }
