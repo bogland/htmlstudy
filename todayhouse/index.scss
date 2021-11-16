@@ -1,7 +1,7 @@
 @import "util";
 body {
   margin: 0 auto;
-  max-width: 1120px;
+  max-width: 1080px;
 }
 header .top_pc {
   display: none;
@@ -47,10 +47,10 @@ header .category {
 main .banner {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  img {
+  picture img {
     width: 100%;
-    object-fit: cover;
     max-height: 380px;
+    object-fit: cover;
   }
 }
 main .productCategory {
@@ -58,7 +58,7 @@ main .productCategory {
   display: flex;
   flex-wrap: wrap;
   div {
-    border: solid black 1px;
+    border: solid black 5px;
     border-collapse: collapse;
     box-sizing: border-box;
     flex: 1 1 25%;
@@ -67,8 +67,8 @@ main .productCategory {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: center; //align-content
+    // overflow: hidden;
     img {
       height: 5.2rem;
       width: 5.2rem;
@@ -88,13 +88,15 @@ main .productCategory {
   main .productCategory {
     display: none;
   }
-  main .banner{
+  main .banner {
     width: 100vw;
     height: 270px;
-  }
-  main .banner img {
-    width: 100%;
-    object-fit:cover;
-    height: 270px;
+    picture {
+      img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+      }
+    }
   }
 }

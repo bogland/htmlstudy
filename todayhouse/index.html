@@ -43,12 +43,30 @@
     </header>
     <main>
       <section class="banner">
-        <img
+        <!-- <img
           src="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427399727944815.jpg?gif=1&w=1920&q=100"
-          srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427399727944815.jpg?gif=1&w=1920&q=100 620w,
-          https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427400112143882.jpg?gif=1&w=2560&q=100 1920w,
-          " 
-        />
+          srcset="
+            https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427399727944815.jpg?gif=1&w=1920&q=100  620w,
+            https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427400112143882.jpg?gif=1&w=2560&q=100 1920w
+          "
+        /> -->
+        <picture>
+          <source
+            srcset="
+              https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427400112143882.jpg?gif=1&w=2560&q=100
+            "
+            media="(min-width: 1920px)"
+          />
+          <source
+            srcset="
+              https://image.ohou.se/i/bucketplace-v2-development/uploads/store/banners/store_home_banners/163427399727944815.jpg?gif=1&w=1920&q=100
+            "
+            media="(min-width: 620px)"
+          />
+          <img
+            src="https://live.staticflickr.com/4561/38054606355_26429c884f_b.jpg"
+          />
+        </picture>
       </section>
       <section class="productCategory">
         <div>
@@ -84,7 +102,7 @@
           <span>8</span>
         </div>
       </section>
-      <section class="todayDeal">
+      <!-- <section class="todayDeal">
         <div>오늘의딜 헤더</div>
         <div>
           <div>상품이미지</div>
@@ -100,7 +118,7 @@
         <div>인기 상품 헤더</div>
         <div>필터</div>
         <div>이미지 설명</div>
-      </section>
+      </section> -->
     </main>
     <footer></footer>
   </body>
