@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.addEventListener("click", () => {
+        animate();
+      });
+      let mouse = {
+        x: null,
+        y: null,
+        radius: (canvas.height / 80) * (canvas.width / 80),
+      };
+      let scrollIndex = 0;
+      window.addEventListener("mousemove", (event) => {
+        mouse.x = event.x;
+        mouse.y = event.y;
+      });
+      window.addEventListener("wheel", (event) => {
+        if (event.deltaY < 0) {
+          scrollIndex -= 1;
+          if (scrollIndex < 0) scrollIndex = 0;
+        } else if (event.deltaY > 0) {
+          scrollIndex += 1;
+        }
+      });
+      const ctx = canvas.getContext("2d");
+
+      const image = new Image();
+      const num = { row: 5, col: 5 };
+      const particleList = [];
+      image.onload = function () {
+        imageSize = { height: image.naturalHeight, width: image.naturalWidth };
+        for (let i = 0; i < num.row; i++) {
+          for (let j = 0; j < num.col; j++) {
+            sx = (i * imageSize.height) / num.row;
+            sy = (j * imageSize.width) / num.col;
+            sw = imageSize.height / num.row;
+            sh = imageSize.width / num.col;
+
+            dx = (canvas.width - image.width) / 2 + sx;
+            dy = (canvas.height - image.width) / 2 + sy;
+            center = { x: canvas.width / 2, y: canvas.height / 2 };
+
+            // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, sw, sh);
+            const particle = new Particle(
+              image,
+              sx,
+              sy,
+              sw,
+              sh,
+              dx,
+              dy,
+              center
+            );
+            particleList.push(particle);
+            particle.draw();
+            // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+          }
+        }
+      };
+      image.src = "apple.png";
+
+      class Particle {
+        constructor(image, x, y, width, height, dx, dy, center) {
+          this.x = x;
+          this.y = y;
+          this.dox = dx; //original
+          this.doy = dy;
+          this.dx = dx;
+          this.dy = dy;
+          this.width = width;
+          this.height = height;
+          this.directionX = this.dx - center.x;
+          this.directionY = this.dy - center.y;
+          this.center = center;
+        }
+        draw() {
+          ctx.drawImage(
+            image,
+            this.x,
+            this.y,
+            this.width,
+            this.height,
+            this.dx,
+            this.dy,
+            this.width,
+            this.height
+          );
+        }
+
+        update() {
+          this.dx += this.directionX / 100;
+          this.dy += this.directionY / 100;
+          // this.dx = this.dox + (scrollIndex * this.directionX) / 10;
+          // this.dy = this.doy + (scrollIndex * this.directionY) / 10;
+          this.draw();
+        }
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particleList.length; i++) {
+          particleList[i].update();
+        }
+      }
+    </script>
+  </body>
+</html>
