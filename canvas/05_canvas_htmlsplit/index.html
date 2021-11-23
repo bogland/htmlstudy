@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="html2canvas.js"></script>
+    <title>Document</title>
+    <style>
+      main {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #object {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: black;
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      /* #object::before {
+        float: left;
+        padding-top: 100%;
+      } */
+      #canvas {
+        position: absolute;
+      }
+      #canvas_img {
+        position: absolute;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <canvas id="canvas" width="1500" height="1500"></canvas>
+      <canvas id="canvas_img"></canvas>
+      <section id="object">
+        <div>C l i c k</div>
+        <div>M e</div>
+      </section>
+    </main>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const canvas_img = document.getElementById("canvas_img");
+      const ctx_img = canvas_img.getContext("2d");
+      html2canvas(document.getElementById("object"), { scale: 1 }).then(
+        (_canvas) => {
+          canvas_img.width = _canvas.width;
+          canvas_img.height = _canvas.height;
+          ctx_img.drawImage(
+            _canvas,
+            0,
+            0,
+            _canvas.width,
+            _canvas.height,
+            0,
+            0,
+            _canvas.width,
+            _canvas.height
+          );
+        }
+      );
+
+      class Particle {
+        constructor(image, x, y, width, height, dx, dy, center) {
+          this.x = x;
+          this.y = y;
+          this.dox = dx; //original
+          this.doy = dy;
+          this.dx = dx;
+          this.dy = dy;
+          this.width = width;
+          this.height = height;
+          this.directionX = this.dx - center.x;
+          this.directionY = this.dy - center.y;
+          this.center = center;
+        }
+        draw() {
+          ctx.drawImage(
+            canvas_img,
+            this.x,
+            this.y,
+            this.width,
+            this.height,
+            this.dx,
+            this.dy,
+            this.width,
+            this.height
+          );
+        }
+
+        update() {
+          this.dx += this.directionX / 100;
+          this.dy += this.directionY / 100;
+          this.draw();
+        }
+      }
+
+      canvas.addEventListener("click", () => {
+        document.getElementById("object").style.display = "none";
+        animate();
+      });
+      particleList = [];
+      num = { row: 5, col: 5 };
+      console.log("canvas_img width : ", canvas_img);
+      imageSize = { height: 200, width: 200 }; //Canvas_img.width로 했었는데 300으로 나와서 실제값인 200으로 넣음
+      for (let i = 0; i < num.row; i++) {
+        for (let j = 0; j < num.col; j++) {
+          sx = (i * imageSize.height) / num.row;
+          sy = (j * imageSize.width) / num.col;
+          sw = imageSize.height / num.row;
+          sh = imageSize.width / num.col;
+
+          dx = (canvas.width - imageSize.width) / 2 + sx; //전체에서 사진 부분을 제외하면 양쪽으로 마진이 구해짐, 그걸 나누기 2하면 좌측 offset
+          dy = (canvas.height - imageSize.height) / 2 + sy;
+          center = { x: canvas.width / 2, y: canvas.height / 2 };
+
+          // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, sw, sh);
+          const particle = new Particle(
+            canvas_img,
+            sx,
+            sy,
+            sw,
+            sh,
+            dx,
+            dy,
+            center
+          );
+          particleList.push(particle);
+          particle.draw();
+          // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
+        }
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particleList.length; i++) {
+          particleList[i].update();
+        }
+      }
+    </script>
+  </body>
+</html>
