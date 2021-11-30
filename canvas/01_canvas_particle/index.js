@@ -132,7 +132,7 @@ function animate() {
   for (let i = 0; i < particlesArray.length; i++) {
     particlesArray[i].update();
   }
-  // connect();
+  connect();
 }
 // resize event
 window.addEventListener("resize", function () {

@@ -80,8 +80,8 @@
           this.dy = dy;
           this.width = width;
           this.height = height;
-          this.directionX = this.dx - center.x;
-          this.directionY = this.dy - center.y;
+          this.directionX = (this.dx - center.x) * Math.random();
+          this.directionY = (this.dy - center.y) * Math.random();
           this.center = center;
         }
         draw() {
@@ -99,8 +99,8 @@
         }
 
         update() {
-          this.dx += this.directionX / 100;
-          this.dy += this.directionY / 100;
+          this.dx += this.directionX / 10;
+          this.dy += this.directionY / 10;
           // this.dx = this.dox + (scrollIndex * this.directionX) / 10;
           // this.dy = this.doy + (scrollIndex * this.directionY) / 10;
           this.draw();

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <button id="btnPrev" type="button">이전</button>
+      <input type="number" id="year" value="2021" />
+      <select id="month">
+        <option value="1">1월</option>
+        <option value="2">2월</option>
+        <option value="3">3월</option>
+        <option value="4">4월</option>
+        <option value="5">5월</option>
+        <option value="6">6월</option>
+        <option value="7">7월</option>
+        <option value="8">8월</option>
+        <option value="9">9월</option>
+        <option value="10">10월</option>
+        <option value="11">11월</option>
+        <option value="12">12월</option>
+      </select>
+      <button id="btnNext" type="button">다음</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+          </tr>
+        </thead>
+        <tbody id="tb_body"></tbody>
+      </table>
+    </main>
+    <script>
+      function checkLeapYear(year) {
+        if (year % 400 == 0) return true;
+        else if (year % 100 == 0) return false;
+        else if (year % 4 == 0) return true;
+        else return false;
+      }
+      function getFirstDayOfWeek(year, month) {
+        if (month < 10) month = "0" + month;
+        return new Date(`${year}-${month}-01`).getDay();
+      }
+
+      function changeYearMonth(year, month) {
+        let monthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const isLeapFeb = month == 2 && heckLeapYear(year);
+        monthDay[1] = isLeapFeb ? 29 : 28;
+
+        let firstDayOfWeek = getFirstDayOfWeek(year, month);
+        let arrCalendar = [];
+        for (let i = 0; i < firstDayOfWeek; i++) {
+          arrCalendar.push("");
+        }
+
+        for (let i = 1; i <= monthDay[month - 1]; i++) {
+          arrCalendar.push(String(i));
+        }
+
+        let remainDay = 7 - (arrCalendar.length % 7);
+        if (remainDay < 7) {
+          for (let i = 0; i < remainDay; i++) {
+            arrCalendar.push("");
+          }
+        }
+        renderCalendar(arrCalendar);
+      }
+
+      function renderCalendar(data) {
+        let h = [];
+        for (let i = 0; i < data.length; i++) {
+          if (i == 0) {
+            h.push("<tr>");
+          } else if (i % 7 == 0) {
+            h.push("</tr>");
+            h.push("<tr>");
+          }
+          h.push("<td>" + data[i] + "</td>");
+        }
+        h.push("</tr>");
+        console.log(h);
+        document.getElementById("tb_body").innerHTML = h.join("");
+      }
+
+      let currentYear = new Date().getFullYear();
+      let currentMonth = new Date().getMonth() + 1;
+      document.getElementById("year").value = currentYear;
+      document.getElementById("month").value = currentMonth;
+
+      changeYearMonth(currentYear, currentMonth);
+
+      document.getElementById("btnPrev").addEventListener("click", () => {
+        let currentMonth = document.getElementById("month").value;
+        let currentYear = new Date().getFullYear();
+        const nextMonth = (currentMonth + 1) % 12;
+        const nextYear = currentYear + (currentMonth + 1) / 12;
+        document.getElementById("month").value = nextMonth;
+        document.getElementById("year").value = nextYear;
+      });
+      document.getElementById("btnNext").addEventListener("click", () => {
+        let currentMonth = document.getElementById("month").value;
+        let currentYear = new Date().getFullYear();
+        const nextMonth = (currentMonth + 1) % 12;
+        const nextYear = currentYear + (currentMonth + 1) / 12;
+        document.getElementById("month").value = nextMonth;
+        document.getElementById("year").value = nextYear;
+      });
+    </script>
+  </body>
+</html>
