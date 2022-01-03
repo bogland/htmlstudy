@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+body {
+  background: #0d192b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  background: #14253d;
+  height: 596px;
+  width: 350px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24px 24px 32px 24px;
+}
+
+main section.prodInfo .image {
+  position: relative;
+}
+
+main section.prodInfo .image img {
+  width: 302px;
+  height: 302px;
+}
+
+main section.prodInfo .image .imageHover {
+  position: absolute;
+  top: 0px;
+  height: 302px;
+  width: 302px;
+  background: rgba(0, 255, 246, 0.5);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section.prodInfo .image:hover .imageHover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main section.prodInfo .name {
+  margin-top: 24px;
+  color: white;
+}
+
+main section.prodInfo .name:hover {
+  color: #00fff6;
+}
+
+main section.prodInfo .description {
+  margin-top: 16px;
+  color: #8bacd9;
+  line-height: 24px;
+}
+
+main section.subInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 24px;
+}
+
+main section.subInfo .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #00fff6;
+}
+
+main section.subInfo .price span {
+  margin-left: 6px;
+}
+
+main section.subInfo .dayLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #8bacd9;
+}
+
+main section.subInfo .dayLeft span {
+  margin-left: 5px;
+}
+
+main section.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 24px;
+  border-top: #2f415b 1px solid;
+  padding-top: 17px;
+}
+
+main section.bottom .userThumbnail img {
+  height: 33px;
+  width: 33px;
+}
+
+main section.bottom .userName {
+  margin-left: 15px;
+}
+
+main section.bottom .userName .front {
+  color: #8bacd9;
+}
+
+main section.bottom .userName .back {
+  margin-left: 4px;
+  color: white;
+}
+
+main section.bottom .userName .back:hover {
+  color: #00fff6;
+}
+/*# sourceMappingURL=index.css.map */

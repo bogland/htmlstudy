@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+body {
+  background: hsl(217, 54%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main {
+  background: rgba(20, 37, 61, 1);
+  height: 596px;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 24px 24px 32px 24px;
+  section.prodInfo {
+    .image {
+      position: relative;
+      img {
+        width: 302px;
+        height: 302px;
+      }
+      .imageHover {
+        position: absolute;
+        top: 0px;
+        height: 302px;
+        width: 302px;
+        background: rgba(0, 255, 246, 0.5);
+        // display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .image:hover .imageHover {
+      display: flex;
+    }
+    .name {
+      margin-top: 24px;
+      color: rgb(255, 255, 255);
+    }
+    .name:hover {
+      color: rgba(0, 255, 246, 1);
+    }
+    .description {
+      margin-top: 16px;
+      color: rgba(139, 172, 217, 1);
+      line-height: 24px;
+    }
+  }
+  section.subInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    .price {
+      display: flex;
+      align-items: center;
+      color: rgba(0, 255, 246, 1);
+      span {
+        margin-left: 6px;
+      }
+    }
+    .dayLeft {
+      display: flex;
+      align-items: center;
+      color: rgba(139, 172, 217, 1);
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+  section.bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    border-top: rgba(47, 65, 91, 1) 1px solid;
+    padding-top: 17px;
+    .userThumbnail img {
+      height: 33px;
+      width: 33px;
+    }
+    .userName {
+      margin-left: 15px;
+      .front {
+        color: rgba(139, 172, 217, 1);
+      }
+      .back {
+        margin-left: 4px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .back:hover {
+        color: rgba(0, 255, 246, 1);
+      }
+    }
+  }
+}

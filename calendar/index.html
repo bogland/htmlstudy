@@ -54,7 +54,7 @@
 
       function changeYearMonth(year, month) {
         let monthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        const isLeapFeb = month == 2 && heckLeapYear(year);
+        const isLeapFeb = month == 2 && checkLeapYear(year);
         monthDay[1] = isLeapFeb ? 29 : 28;
 
         let firstDayOfWeek = getFirstDayOfWeek(year, month);
@@ -66,13 +66,6 @@
         for (let i = 1; i <= monthDay[month - 1]; i++) {
           arrCalendar.push(String(i));
         }
-
-        let remainDay = 7 - (arrCalendar.length % 7);
-        if (remainDay < 7) {
-          for (let i = 0; i < remainDay; i++) {
-            arrCalendar.push("");
-          }
-        }
         renderCalendar(arrCalendar);
       }
 
@@ -82,13 +75,13 @@
           if (i == 0) {
             h.push("<tr>");
           } else if (i % 7 == 0) {
+            // 0~6 , 7~13  , 14~20
             h.push("</tr>");
             h.push("<tr>");
           }
           h.push("<td>" + data[i] + "</td>");
         }
         h.push("</tr>");
-        console.log(h);
         document.getElementById("tb_body").innerHTML = h.join("");
       }
 
@@ -98,22 +91,24 @@
       document.getElementById("month").value = currentMonth;
 
       changeYearMonth(currentYear, currentMonth);
-
       document.getElementById("btnPrev").addEventListener("click", () => {
-        let currentMonth = document.getElementById("month").value;
-        let currentYear = new Date().getFullYear();
-        const nextMonth = (currentMonth + 1) % 12;
-        const nextYear = currentYear + (currentMonth + 1) / 12;
-        document.getElementById("month").value = nextMonth;
-        document.getElementById("year").value = nextYear;
+        let currentMonth = document.getElementById("month").value - 1;
+        let currentYear = document.getElementById("year").value - 1;
+        const month = ((currentMonth - 1 + 12) % 12) + 1; // 0~11   1월 : 0
+        const year = parseInt(currentYear - (currentMonth - 1 < 0 ? 1 : 0)) + 1;
+        document.getElementById("month").value = month;
+        document.getElementById("year").value = year;
+        changeYearMonth(year, month);
       });
       document.getElementById("btnNext").addEventListener("click", () => {
-        let currentMonth = document.getElementById("month").value;
-        let currentYear = new Date().getFullYear();
-        const nextMonth = (currentMonth + 1) % 12;
-        const nextYear = currentYear + (currentMonth + 1) / 12;
-        document.getElementById("month").value = nextMonth;
-        document.getElementById("year").value = nextYear;
+        let currentMonth = document.getElementById("month").value - 1;
+        let currentYear = document.getElementById("year").value - 1;
+        const month = ((currentMonth + 1) % 12) + 1;
+        const year =
+          parseInt(currentYear + (currentMonth + 1 >= 12 ? 1 : 0)) + 1;
+        document.getElementById("month").value = month;
+        document.getElementById("year").value = year;
+        changeYearMonth(year, month);
       });
     </script>
   </body>
