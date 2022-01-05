@@ -1,0 +1,113 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+}
+
+main {
+  padding: 88px 24px 88px 24px;
+  display: flex;
+  flex-direction: column;
+  .picture {
+    position: relative;
+    img {
+      height: 240px;
+      width: 100%;
+    }
+    .purpleFilter {
+      position: absolute;
+      top: 0px;
+      background: rgba(170, 92, 219, 1);
+      opacity: 0.6;
+      height: 240px;
+      width: 100%;
+    }
+  }
+  .context {
+    padding: 39px 35px 35px 35px;
+    background: rgba(27, 25, 56, 1);
+    .title {
+      font-size: 28px;
+      text-align: center;
+      color: white;
+      line-height: 35px;
+      font-weight: bold;
+      .highlight {
+        color: rgba(170, 92, 219, 1);
+      }
+    }
+    .description {
+      color: rgba(255, 255, 255, 0.75);
+      padding-top: 20px;
+      line-height: 25px;
+      text-align: center;
+    }
+    .numberWrap {
+      margin-top: 43px;
+      div + div {
+        margin-top: 26px;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .number {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .categoryName {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    flex-direction: row-reverse;
+    max-width: 1000px;
+    .picture {
+      width: 50%;
+      img {
+        height: 100%;
+      }
+      .purpleFilter {
+        height: 100%;
+      }
+    }
+    .context {
+      box-sizing: border-box;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .title {
+        text-align: left;
+      }
+      .description {
+        text-align: left;
+      }
+      .numberWrap {
+        margin-top: 72px;
+        flex-direction: row;
+        justify-content: space-between;
+        div + div {
+          margin-top: 0px;
+        }
+        .number {
+          text-align: left;
+        }
+        .categoryName {
+          text-align: left;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

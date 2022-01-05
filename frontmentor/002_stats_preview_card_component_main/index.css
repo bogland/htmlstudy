@@ -1,0 +1,159 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: black;
+}
+
+main {
+  padding: 88px 24px 88px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .picture {
+  position: relative;
+}
+
+main .picture img {
+  height: 240px;
+  width: 100%;
+}
+
+main .picture .purpleFilter {
+  position: absolute;
+  top: 0px;
+  background: #aa5cdb;
+  opacity: 0.6;
+  height: 240px;
+  width: 100%;
+}
+
+main .context {
+  padding: 39px 35px 35px 35px;
+  background: #1b1938;
+}
+
+main .context .title {
+  font-size: 28px;
+  text-align: center;
+  color: white;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+main .context .title .highlight {
+  color: #aa5cdb;
+}
+
+main .context .description {
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: 20px;
+  line-height: 25px;
+  text-align: center;
+}
+
+main .context .numberWrap {
+  margin-top: 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .context .numberWrap div + div {
+  margin-top: 26px;
+}
+
+main .context .numberWrap .number {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+main .context .numberWrap .categoryName {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media (min-width: 600px) {
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    max-width: 1000px;
+  }
+  main .picture {
+    width: 50%;
+  }
+  main .picture img {
+    height: 100%;
+  }
+  main .picture .purpleFilter {
+    height: 100%;
+  }
+  main .context {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .context .title {
+    text-align: left;
+  }
+  main .context .description {
+    text-align: left;
+  }
+  main .context .numberWrap {
+    margin-top: 72px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .context .numberWrap div + div {
+    margin-top: 0px;
+  }
+  main .context .numberWrap .number {
+    text-align: left;
+  }
+  main .context .numberWrap .categoryName {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=index.css.map */
