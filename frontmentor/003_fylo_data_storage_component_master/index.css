@@ -1,0 +1,205 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: url("/images/bg-mobile.png");
+}
+
+main {
+  max-width: 376px;
+  padding: 127px 25px 127px 25px;
+}
+
+main .iconsSection {
+  background: #1d2c67;
+  border-radius: 10px 100px 10px 10px;
+  padding: 40px;
+}
+
+main .iconsSection .images {
+  margin-top: 33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .iconsSection .images .iconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+  width: 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  padding: 12px;
+  background: #0c122c;
+}
+
+main .iconsSection .images .iconWrapper + .iconWrapper {
+  margin-left: 16px;
+}
+
+main .storageSection {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 16px;
+  background: #1d2c67;
+  padding: 32px;
+}
+
+main .storageSection .text {
+  font-size: 14px;
+  color: white;
+}
+
+main .storageSection .text .highlight {
+  font-weight: bold;
+  color: white;
+}
+
+main .storageSection .bar {
+  margin-top: 20px;
+  height: 20px;
+  width: 100%;
+  background: #0c122c;
+  border-radius: 47px;
+  padding: 3px;
+}
+
+main .storageSection .bar .colorBar {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  border-radius: 47px;
+  background: -webkit-gradient(linear, left top, right top, from(#ffa399), to(#ff4c97));
+  background: linear-gradient(to right, #ffa399, #ff4c97);
+}
+
+main .storageSection .bar .colorBar .whiteCircle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  right: 3px;
+  background: white;
+  border-radius: 50%;
+}
+
+main .storageSection .startEnd {
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  font-size: 15px;
+}
+
+main .storageSection .storageLeft {
+  position: absolute;
+  left: calc(50% - 90px);
+  bottom: -33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+main .storageSection .storageLeft .text {
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+}
+
+main .storageSection .storageLeft .textRight {
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+@media (min-width: 700px) {
+  body {
+    background: #0c122c url("/images/bg-desktop.png") no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+  }
+  main {
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    width: 100%;
+    max-width: none;
+    gap: 30px;
+    padding: 290px 260px;
+  }
+  main .iconsSection {
+    max-height: 200px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  main .storageSection {
+    position: relative;
+    max-height: 154px;
+    margin: 0px;
+    margin-left: 30px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  main .storageSection .storageLeft {
+    position: absolute;
+    top: -33px;
+    right: 25px;
+    left: auto;
+    bottom: auto;
+    border-bottom-right-radius: 0;
+  }
+  main .storageSection .storageLeft .triangle {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    background: white;
+    height: 21px;
+    width: 21px;
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+}
+/*# sourceMappingURL=index.css.map */

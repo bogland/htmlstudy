@@ -1,0 +1,165 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("/images/bg-mobile.png");
+}
+
+main {
+  max-width: 376px;
+  padding: 127px 25px 127px 25px;
+  .iconsSection {
+    background: rgba(29, 44, 103, 1);
+    border-radius: 10px 100px 10px 10px;
+    padding: 40px;
+    .images {
+      margin-top: 33px;
+      display: flex;
+      .iconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 48px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 12px;
+        background: rgba(12, 18, 44, 1);
+      }
+      .iconWrapper + .iconWrapper {
+        margin-left: 16px;
+      }
+    }
+  }
+  .storageSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    background: rgba(29, 44, 103, 1);
+    padding: 32px;
+    .text {
+      font-size: 14px;
+      color: white;
+      .highlight {
+        font-weight: bold;
+        color: white;
+      }
+    }
+    .bar {
+      margin-top: 20px;
+      height: 20px;
+      width: 100%;
+      background: rgba(12, 18, 44, 1);
+      border-radius: 47px;
+      padding: 3px;
+      .colorBar {
+        position: relative;
+        width: 70%;
+        height: 100%;
+        border-radius: 47px;
+        background: linear-gradient(
+          to right,
+          rgba(255, 163, 153, 1),
+          rgba(255, 76, 151, 1)
+        );
+        .whiteCircle {
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          top: 3px;
+          right: 3px;
+          background: white;
+          border-radius: 50%;
+        }
+      }
+    }
+    .startEnd {
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-size: 15px;
+    }
+    .storageLeft {
+      position: absolute;
+      left: calc(50% - 90px);
+      bottom: -33px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      .text {
+        font-weight: bold;
+        font-size: 40px;
+        color: black;
+      }
+      .textRight {
+        margin-left: 8px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  body {
+    background: rgba(12, 18, 44, 1) url("/images/bg-desktop.png") no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+  }
+
+  main {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    max-width: none;
+    gap: 30px;
+    padding: 290px 260px;
+    .iconsSection {
+      max-height: 200px;
+      flex: 1;
+    }
+    .storageSection {
+      position: relative;
+      max-height: 154px;
+      margin: 0px;
+      margin-left: 30px;
+      flex: 1;
+
+      .storageLeft {
+        position: absolute;
+        top: -33px;
+        right: 25px;
+        left: auto;
+        bottom: auto;
+        border-bottom-right-radius: 0;
+        .triangle {
+          position: absolute;
+          right: 0;
+          bottom: -20px;
+          background: white;
+          height: 21px;
+          width: 21px;
+          clip-path: polygon(100% 0, 0 0, 100% 100%);
+        }
+      }
+    }
+  }
+}
+
+// body::before {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   content: "";
+//   width: 100vh;
+//   height: 100vh;
+//   background: ;
+// }
