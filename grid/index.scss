@@ -1,0 +1,108 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 1fr 0.05fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header header header"
+    "main main aside"
+    "sub sub aside"
+    "footer footer footer";
+}
+.header {
+  grid-area: header;
+  background: green;
+
+  display: flex;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  .left {
+    flex: 50%;
+
+    .logoWrap {
+      width: 100px;
+      height: 100%;
+      background: orange;
+      font-size: 30px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .menu {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: orange;
+    .subMenuWrap {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .subMenu {
+      }
+    }
+  }
+}
+.sub {
+  grid-area: sub;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px 20px 20px;
+  background: grey;
+
+  .content {
+    flex: 50%;
+    width: 100%;
+    @for $i from 0 to 4 {
+      &:nth-child(#{$i + 1}) {
+        background: rgba(231, 255, 14, 1-$i * 0.5);
+      }
+    }
+  }
+}
+.main {
+  grid-area: main;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: grey;
+  .content {
+    flex: 25%;
+    height: 100%;
+    @for $i from 0 to 4 {
+      &:nth-child(#{$i + 1}) {
+        background: rgba(162, 0, 255, 1-$i * 0.2);
+      }
+    }
+  }
+}
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: rgb(0, 0, 170);
+  .content {
+    flex: 33.333%;
+    width: 100%;
+    @for $i from 0 to 4 {
+      &:nth-child(#{$i + 1}) {
+        background: rgba(255, 0, 0, 1-$i * 0.2);
+      }
+    }
+  }
+}
+.footer {
+  grid-area: footer;
+  background: rgb(59, 216, 255);
+}
