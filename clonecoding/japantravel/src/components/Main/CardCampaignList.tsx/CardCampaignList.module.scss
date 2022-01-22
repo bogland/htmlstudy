@@ -1,0 +1,76 @@
+.cardCampaignWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 10px;
+  margin-bottom: 40px;
+
+  .cardCampaign {
+    display: flex;
+    flex-direction: column;
+    border: #ddd solid 1px;
+    .itemImg {
+      flex: 194px;
+    }
+    .contentWrap {
+      flex: 96px;
+      background: #2f2f2f;
+      display: flex;
+      flex-direction: column;
+      .title {
+        padding: 10px 5px;
+        color: white;
+        line-height: 22px;
+      }
+      .cardTypeWrap {
+        position: relative;
+        border-top: #4a4a4a solid 1px;
+        flex: 1;
+        img {
+          position: absolute;
+          top: 0;
+          left: 5px;
+          width: 12px;
+          height: 20px;
+        }
+        .cardType {
+          color: #b1b1b1;
+          margin: 5px 22px;
+        }
+      }
+    }
+    .contentWrap.Video {
+      background: white;
+      .title {
+        color: black;
+      }
+      .cardTypeWrap {
+        border-top: #ddd solid 1px;
+        display: flex;
+        .cardType {
+          margin: auto 5px;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .cardCampaignWrap {
+    gap: 20px;
+    .cardCampaign {
+      .itemImg {
+      }
+      .contentWrap {
+        .title {
+        }
+        .cardTypeWrap {
+          img {
+          }
+          .cardType {
+          }
+        }
+      }
+    }
+  }
+}
