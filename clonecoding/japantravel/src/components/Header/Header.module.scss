@@ -1,7 +1,6 @@
 .header {
   nav {
     padding: 10px;
-
     display: flex;
     justify-content: space-between;
     .icon {
@@ -15,4 +14,64 @@
 }
 
 @media (min-width: 600px) {
+  .headerPC {
+    max-width: 1320px;
+    margin: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    nav {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      & > *:not(:first-child) {
+        flex: 1;
+      }
+      h2 {
+        white-space: nowrap;
+        margin-left: 20px;
+        .highlight {
+          color: red;
+          font-weight: bold;
+        }
+      }
+      .category {
+        display: flex;
+        li {
+          white-space: nowrap;
+          &::before {
+            content: "\2022";
+            color: #b3b3b3;
+            display: inline-block;
+            margin: 0 20px;
+            vertical-align: text-top;
+          }
+        }
+      }
+      .search {
+        margin: 0 20px;
+        max-width: 396px;
+        height: 40px;
+        border: #e0e0e0 1px solid;
+        input {
+          height: 100%;
+          width: 100%;
+          border: none;
+        }
+      }
+      .logoWrap {
+        display: flex;
+        flex-wrap: nowrap;
+        .icon {
+          width: 30px;
+          height: 30px;
+        }
+        .logo {
+          height: 30px;
+        }
+        img + img {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
 }

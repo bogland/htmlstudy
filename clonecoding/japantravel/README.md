@@ -11,3 +11,25 @@ https://www.figma.com/file/BxBV7BWvTYMc7fTT6sWvki/Untitled?node-id=0%3A1
 ## reset css
 
 > yarn add styled-reset styled-components
+
+## react mediaquery hook
+
+> yarn add react-responsive
+> const isPC = useMediaQuery({ minWidth: variables.minWidthPC });
+
+## sass variables in js
+
+global.d.ts 파일을 src/ 폴더 내에 생성
+'''
+declare module "\*.scss" {
+const content: { [className: string]: string };
+export = content;
+}
+'''
+import variables from "css/global.scss";
+사용시
+
+## 절대경로
+
+tsconfig.json에 요소 추가
+"baseUrl": "src"
