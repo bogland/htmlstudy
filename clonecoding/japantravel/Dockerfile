@@ -1,5 +1,5 @@
 # base image
-FROM node:12.2.0-alpine
+FROM node:16.3.0-alpine
 
 # set working directory
 WORKDIR /app
@@ -10,7 +10,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 # app dependencies, install 및 caching
 COPY package.json /app/package.json
 RUN npm install
-RUN npm install react-scripts@3.0.1 -g
+RUN npm install react-scripts -g
 
 # 앱 실행
 CMD ["npm", "start"]
