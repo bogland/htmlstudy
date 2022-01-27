@@ -1,0 +1,38 @@
+.footer {
+  background: #00252e;
+  color: white;
+  padding: 138px 25px 44px 16px;
+  section {
+    margin-top: 23px;
+  }
+  & > section > div {
+    display: flex;
+    gap: 27px;
+    img {
+      width: 13px;
+      height: 18px;
+    }
+    & + div {
+      margin-top: 24px;
+    }
+  }
+  .joinCommunity {
+    .logo {
+      path {
+        fill: rgb(255, 1, 1);
+      }
+    }
+    .location {
+    }
+    .email {
+    }
+  }
+  .wordWrap {
+    img {
+      border: white 1px solid;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

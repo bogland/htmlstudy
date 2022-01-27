@@ -9,8 +9,7 @@ const Main = (props: Props) => {
   const data = [
     {
       title: `
-    The Reason_오늘, 여기, 일본
-    <br/>
+    The Reason_오늘, 여기, 일본\n
     내가 떠나고 싶은 일본여행의 테마는?
     `,
       typeName: "CAMPAIGN",

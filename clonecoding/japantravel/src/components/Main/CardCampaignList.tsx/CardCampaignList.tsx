@@ -27,7 +27,9 @@ const CardCampaignList = (props: Props) => {
             <article className={styles.cardCampaign} key={index}>
               <img className={styles.itemImg} src={item?.img} alt="" />
               <section
-                className={`${styles.contentWrap} ${isVideo && styles.Video}`}
+                className={`${styles.contentWrap} ${
+                  isVideo ? styles.Video : ""
+                }`}
               >
                 <div
                   className={styles.title}
