@@ -1,6 +1,8 @@
 대상 : https://www.welcometojapan.or.kr/jroute/  
 https://www.figma.com/file/BxBV7BWvTYMc7fTT6sWvki/Untitled?node-id=0%3A1
 
+배포 : http://3.38.13.117:3001  
+
 ## 타입스크립트 기반 설치
 
 > yarn create react-app . --template typescript
