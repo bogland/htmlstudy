@@ -1,0 +1,66 @@
+#root {
+  display: grid;
+  grid-template-rows: 1fr;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "topBanner"
+    "GNB"
+    "bannerSlide";
+}
+
+.topBanner {
+  grid-area: topBanner;
+}
+.GNB {
+  grid-area: GNB;
+}
+.bannerSlide {
+  grid-area: bannerSlide;
+}
+
+.ceoService {
+  grid-area: ceoService;
+}
+.advertiseStart {
+  grid-area: advertiseStart;
+}
+.notices {
+  grid-area: notices;
+}
+.news {
+  grid-area: news;
+}
+.todayDate {
+  grid-area: todayDate;
+}
+.accoutInfo {
+  grid-area: accoutInfo;
+}
+.blog {
+  grid-area: blog;
+}
+.product {
+  grid-area: product;
+}
+.academy {
+  grid-area: academy;
+}
+.promotion {
+  grid-area: promotion;
+}
+
+footer {
+}
+
+// @media (min-width: 600px) {
+//   #root {
+//     display: grid;
+//     grid-template-rows: 1fr;
+//     // grid-template-columns: repeat(3, 1fr);
+//     grid-template-areas:
+//       "topBanner topBanner"
+//       "GNB GNB"
+//       "bannerSlide bannerSlide"
+//       "notices login";
+//   }
+// }

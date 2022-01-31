@@ -1,0 +1,34 @@
+.bannerWrap {
+  height: 160px;
+  width: 100vw;
+  display: flex;
+  overflow-x: scroll;
+  .content {
+    flex: 0 0 auto;
+    width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    .titleLeft {
+      width: 50%;
+      z-index: 1;
+      .title {
+      }
+      .subTitle {
+      }
+    }
+    .imgRight {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
