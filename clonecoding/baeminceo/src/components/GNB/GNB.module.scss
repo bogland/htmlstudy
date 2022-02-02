@@ -12,5 +12,9 @@
     transform: translate(0, -50%);
   }
   .titleLogo {
+    height: 35px;
+    img {
+      height: 100%;
+    }
   }
 }

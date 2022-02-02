@@ -9,9 +9,15 @@ function App() {
   return (
     <>
       <header>
-        <TopBanner></TopBanner>
-        <GNB></GNB>
-        <BannerSlide></BannerSlide>
+        <section className="topBanner">
+          <TopBanner></TopBanner>
+        </section>
+        <section className="GNB">
+          <GNB></GNB>
+        </section>
+        <section className="bannerSlide">
+          <BannerSlide></BannerSlide>
+        </section>
       </header>
       <section className="ceoService">
         <CeoService></CeoService>

@@ -11,7 +11,7 @@ const BannerSlide = (props: Props) => {
     },
   ];
 
-  dataList.push(dataList[0]);
+  // dataList.push(dataList[0]);
   return (
     <>
       <ul className={styles.bannerWrap}>

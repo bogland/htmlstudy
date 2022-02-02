@@ -1,18 +1,35 @@
+$mobile: 10px;
+$pc: 20px 100px;
+
+@mixin padding() {
+  padding: $mobile;
+  @media screen and (min-width: 600px) {
+    padding: $pc;
+    br {
+      display: none;
+    }
+  }
+}
+
 .bannerWrap {
   height: 71px;
   background: yellow;
   display: flex;
   justify-content: space-between;
   .textLeft {
+    white-space: nowrap;
     line-height: 20px;
-    padding: 10px;
+    // padding: 10px;
+    @include padding();
     margin: auto 0;
     strong {
       font-weight: bold;
     }
   }
   .imgRight {
+    display: flex;
     img {
+      margin-left: auto;
       height: 100%;
     }
   }
