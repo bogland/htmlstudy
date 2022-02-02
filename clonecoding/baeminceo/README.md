@@ -59,24 +59,25 @@ tsconfig.json에 요소 추가
 
 4. slider 요소가 늘어나면 width가 늘어나므로 ul tag width:100vw로 지정
 
-5. mediaquery가 필요한 요소는 mixin으로 관리  
-   '''
-   $mobile: 10px;
+5. mediaquery가 필요한 요소는 mixin으로 관리
+
+```
+$mobile: 10px;
 $pc: 20px 100px;
 
 @mixin padding() {
-padding: $mobile;
-@media screen and (min-width: 600px) {
-padding: $pc;
-br {
-display: none;
-}
-}
-}
-
-.textLeft {
-// padding: 10px;
-@include padding();
+  padding: $mobile;
+  @media screen and (min-width: 600px) {
+    padding: $pc;
+    br {
+      display: none;
+    }
+  }
 }
 
-'''
+  .textLeft {
+    // padding: 10px;
+    @include padding();
+  }
+
+```
