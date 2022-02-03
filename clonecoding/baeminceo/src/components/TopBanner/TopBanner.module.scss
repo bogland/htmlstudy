@@ -1,15 +1,4 @@
-$mobile: 10px;
-$pc: 20px 100px;
-
-@mixin padding() {
-  padding: $mobile;
-  @media screen and (min-width: 600px) {
-    padding: $pc;
-    br {
-      display: none;
-    }
-  }
-}
+@use "src/css/global" as *;
 
 .bannerWrap {
   height: 71px;
@@ -18,9 +7,9 @@ $pc: 20px 100px;
   justify-content: space-between;
   .textLeft {
     white-space: nowrap;
+    padding: var(--padding);
     line-height: 20px;
     // padding: 10px;
-    @include padding();
     margin: auto 0;
     strong {
       font-weight: bold;
@@ -31,6 +20,18 @@ $pc: 20px 100px;
     img {
       margin-left: auto;
       height: 100%;
+    }
+  }
+
+  $padding: (
+    mobile: 10px,
+    pc: 20px 100px,
+  );
+  --padding: #{map-get($padding, mobile)};
+  @include mobile {
+    --padding: #{map-get($padding, pc)};
+    br {
+      display: none;
     }
   }
 }

@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Reset } from "styled-reset";
-import "./css/global.scss";
+import "./css/_global.scss";
 ReactDOM.render(
   <React.StrictMode>
     <Reset />

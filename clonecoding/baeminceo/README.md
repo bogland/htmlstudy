@@ -9,7 +9,9 @@ https://www.figma.com/file/BxBV7BWvTYMc7fTT6sWvki/Untitled?node-id=0%3A1
 
 ## module scss 설치
 
-> yarn add node-sass
+> yarn add sass
+
+- node-sass depreciated됨
 
 ## scss Module Transform Extension
 
@@ -80,4 +82,36 @@ $pc: 20px 100px;
     @include padding();
   }
 
+```
+
+코드 개선 후
+
+```
+_global.scss
+@mixin mobile {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+TopBanner.moudle.scss
+@use "src/css/global" as *;
+.bannerWrap {
+    .textLeft {
+    white-space: nowrap;
+    padding: var(--padding);
+  }
+
+  $padding: (
+    mobile: 10px,
+    pc: 20px 100px,
+  );
+  --padding: #{map-get($padding, mobile)};
+  @include mobile {
+    --padding: #{map-get($padding, pc)};
+    br {
+      display: none;
+    }
+  }
+}
 ```
