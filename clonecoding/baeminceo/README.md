@@ -115,3 +115,46 @@ TopBanner.moudle.scss
   }
 }
 ```
+
+더 간소화
+
+```
+_variables.scss
+$objects: (
+  paddingLeft: (
+    mobile: 10px,
+    pc: 100px,
+  ),
+);
+
+_util.scss
+@function map($object, $key) {
+  $result: map-get(map-get($objects, $object), $key);
+  @return #{$result};
+}
+
+@mixin makeVar($var, $value) {
+  #{-- + $var}: $value;
+}
+
+@mixin varMap($variable, $object, $key, $head: #{""}) {
+  $value: $head map($object, $key);
+  @include makeVar($variable, $value);
+}
+
+@function toVar($value) {
+  $result: var(#{-- + $value});
+  @return $result;
+}
+
+TopBanner.module.scss
+  .textLeft {
+    padding: toVar(padding); // padding:var(--padding)
+  }
+  @include varMap(padding, paddingLeft, mobile);
+  // --padding:20px;
+    @include mobile {
+      @include varMap(padding, paddingLeft, pc, 20px);
+      // --padding:20px 100px;
+    }
+```
