@@ -8,9 +8,8 @@
   justify-content: space-between;
   .textLeft {
     white-space: nowrap;
-    padding: var(--padding);
+    padding: toVar(padding);
     line-height: 20px;
-    // padding: 10px;
     margin: auto 0;
     strong {
       font-weight: bold;
@@ -23,10 +22,9 @@
       height: 100%;
     }
   }
-
-  --padding: #{map-get($paddingLeft, mobile)};
+  @include varMap(padding, paddingLeft, mobile);
   @include mobile {
-    --padding: 20px #{map-get($paddingLeft, pc)};
+    @include varMap(padding, paddingLeft, pc, 20px);
     br {
       display: none;
     }

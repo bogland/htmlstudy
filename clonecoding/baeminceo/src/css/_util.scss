@@ -1,5 +1,26 @@
+@use "src/css/variable" as *;
+
 @mixin mobile {
   @media screen and (min-width: 600px) {
     @content;
   }
+}
+
+@function map($object, $key) {
+  $result: map-get(map-get($objects, $object), $key);
+  @return #{$result};
+}
+
+@mixin makeVar($var, $value) {
+  #{-- + $var}: $value;
+}
+
+@mixin varMap($variable, $object, $key, $head: #{""}) {
+  $value: $head map($object, $key);
+  @include makeVar($variable, $value);
+}
+
+@function toVar($value) {
+  $result: var(#{-- + $value});
+  @return $result;
 }
