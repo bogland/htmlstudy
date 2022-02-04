@@ -11,6 +11,11 @@
   @return #{$result};
 }
 
+@function mapDevice($object, $key, $device) {
+  $result: map-get(map-get($objects2, $object), $key);
+  @return #{map-get($result, $device)}; //map은 return이 안됨
+}
+
 @mixin makeVar($var, $value) {
   #{-- + $var}: $value;
 }
@@ -24,3 +29,30 @@
   $result: var(#{-- + $value});
   @return $result;
 }
+
+//padding-left: auto("header leftPadding");
+//padding-left: var(--header_leftPadding)
+:root {
+  --header_leftPadding: 20px;
+  @media screen and (min-width: 600px) {
+    --header_leftPadding: 20px;
+  }
+}
+
+// $objects: (
+//   header: (
+//     leftPadding: (
+//       mobile: 10px,
+//       pc: 100px,
+//     ),
+//   ),
+// );
+@mixin auto($key, $area) {
+  // #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), mobile)};
+  #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), mobile)};
+  @media screen and (min-width: 600px) {
+    #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), pc)};
+  }
+  // #{$key}: #{nth($area, 1)};
+  // #{-- + $var};
+} ;

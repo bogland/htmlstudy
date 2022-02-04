@@ -8,7 +8,8 @@
   justify-content: space-between;
   .textLeft {
     white-space: nowrap;
-    padding: toVar(padding);
+    // padding: toVar(padding);
+    @include auto(padding-left, header leftPadding);
     line-height: 20px;
     margin: auto 0;
     strong {
@@ -20,13 +21,6 @@
     img {
       margin-left: auto;
       height: 100%;
-    }
-  }
-  @include varMap(padding, paddingLeft, mobile);
-  @include mobile {
-    @include varMap(padding, paddingLeft, pc, 20px);
-    br {
-      display: none;
     }
   }
 }

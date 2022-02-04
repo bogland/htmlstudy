@@ -158,3 +158,38 @@ TopBanner.module.scss
       // --padding:20px 100px;
     }
 ```
+
+최종 개선
+
+```
+_variable.scss
+$objects2: (
+  header: (
+    leftPadding: (
+      mobile: 10px,
+      pc: 100px,
+    ),
+  ),
+);
+
+_util.scss
+@function mapDevice($object, $key, $device) {
+  $result: map-get(map-get($objects2, $object), $key);
+  @return #{map-get($result, $device)}; //map은 return이 안됨
+}
+
+@mixin auto($key, $area) {
+  // #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), mobile)};
+  #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), mobile)};
+  @media screen and (min-width: 600px) {
+    #{$key}: #{mapDevice(nth($area, 1), nth($area, 2), pc)};
+  }
+  // #{$key}: #{nth($area, 1)};
+  // #{-- + $var};
+} ;
+
+_TopBanner.module.scss
+  .textLeft {
+    @include auto(padding-left, header leftPadding);
+  }
+```
