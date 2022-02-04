@@ -193,3 +193,8 @@ _TopBanner.module.scss
     @include auto(padding-left, header leftPadding);
   }
 ```
+
+6. scss함수
+
+- scss함수 nth()는 #{} 안에서만 처리
+- @function @return에 map은 출력 못함(only 값만 출력)
