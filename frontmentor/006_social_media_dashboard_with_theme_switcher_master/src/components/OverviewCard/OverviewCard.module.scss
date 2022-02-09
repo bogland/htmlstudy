@@ -1,0 +1,50 @@
+.overviewCardWrap {
+  background: rgba(240, 242, 250, 1);
+  padding: 27px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 25px;
+  min-width: 255px;
+  box-sizing: border-box;
+  .label {
+    white-space: nowrap;
+    color: rgba(99, 104, 126, 1);
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .snsIcon {
+    width: 20px;
+    height: 20px;
+    background: rgba(25, 143, 241, 1);
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: auto;
+  }
+  .todayCount {
+    font-size: 32px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .percentWrap {
+    color: #1db470;
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    .iconUp {
+      width: 8px;
+      height: 4px;
+    }
+    .percent {
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .overviewCardWrap {
+    min-width: 255px;
+    box-sizing: border-box;
+  }
+}

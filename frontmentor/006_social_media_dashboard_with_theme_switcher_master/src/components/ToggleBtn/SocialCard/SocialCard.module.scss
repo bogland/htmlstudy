@@ -1,0 +1,42 @@
+.socialCardWrap {
+  padding: 31px 64px;
+  background: rgba(51, 58, 86, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 255px;
+  box-sizing: border-box;
+
+  .snsIconWrap {
+    display: flex;
+    align-items: center;
+    .snsIcon {
+      width: 20px;
+      height: 20px;
+      background: blue;
+    }
+    .userName {
+      margin-left: 5px;
+      color: rgba(139, 151, 198, 1);
+    }
+  }
+  .followerNum {
+    font-size: 54px;
+    color: white;
+  }
+  .labelFollowers {
+    color: rgba(139, 151, 198, 1);
+    font-size: 12px;
+  }
+  .todayNum {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .socialCardWrap {
+    min-width: 255px;
+    box-sizing: border-box;
+  }
+}
