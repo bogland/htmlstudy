@@ -1,0 +1,23 @@
+.productImgSection {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .thumbnailWrap {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    .thumbnail {
+      border-radius: 7px;
+      overflow: hidden;
+      img {
+      }
+      &.active {
+        opacity: 50%;
+        border: red 2px solid;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.productImgSection {
+  position: relative;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .btn {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .img {
+      width: 10px;
+      height: 10px;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      left: 10px;
+    }
+    &:nth-child(3) {
+      top: 50%;
+      right: 10px;
+    }
+  }
+}

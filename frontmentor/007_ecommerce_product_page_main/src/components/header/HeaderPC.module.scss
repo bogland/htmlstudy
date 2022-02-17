@@ -1,0 +1,38 @@
+.header {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  .left {
+    display: flex;
+    align-items: center;
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      height: 20px;
+    }
+    .categoryWrap {
+      margin-left: 30px;
+
+      display: flex;
+      font-size: 12px;
+      li + li {
+        margin-left: 20px;
+      }
+    }
+  }
+  .right {
+    margin-left: auto;
+    display: flex;
+    .cartIcon {
+      width: 20px;
+      height: 20px;
+    }
+    .userIcon {
+      margin-left: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

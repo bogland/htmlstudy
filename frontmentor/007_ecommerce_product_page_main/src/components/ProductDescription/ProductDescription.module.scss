@@ -1,0 +1,94 @@
+.productDetailSection {
+  margin: 20px;
+  .productDescriptionSection {
+    .brandName {
+      color: orange;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .title {
+      margin-top: 20px;
+
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .description {
+      margin-top: 20px;
+      color: #777;
+      line-height: 25px;
+    }
+  }
+  .priceSection {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    .priceWrap {
+      display: flex;
+      align-items: center;
+      .salePrice {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .salePercent {
+        margin-left: 15px;
+        font-weight: bold;
+        color: rgb(255, 115, 0);
+        background: rgb(255, 218, 187);
+      }
+    }
+    .retailPrice {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+  }
+  .priceQuantitySection {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgb(247, 247, 247);
+    .btn {
+      color: rgb(255, 115, 0);
+      background: white;
+      border: none;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+  .cartBtnWrap {
+    margin-top: 10px;
+    width: 100%;
+
+    display: flex;
+    border: none;
+    outline: none;
+    background: rgb(255, 115, 0);
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    .cartIcon {
+      filter: brightness(0) invert(1);
+    }
+    .btnLabel {
+      margin-left: 20px;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .priceSection {
+    flex-direction: column;
+    .retailPrice {
+      margin-top: 10px;
+    }
+  }
+  .cartBtnWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
