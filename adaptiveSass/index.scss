@@ -1,0 +1,23 @@
+@function convertToVW($values){
+    $vw-context: (1320 * 0.01) * 1px;
+    // @return min($vw-value,$values) 
+    @return ($values / $vw-context) * 1vw;
+}
+
+@function adaptiveVW($value){
+    @return calc(min(#{convertToVW($value)}, #{$value}));
+}
+
+@function vw($values){
+    $list: ();
+    @each $value in $values{
+        $list:append($list,adaptiveVW($value));
+    }
+    @return $list;
+}
+
+.text{
+    // font-size: vw(10px);
+    font-size : vw(11px);   
+    // width: unquote(calc(11px / 2px));
+}
