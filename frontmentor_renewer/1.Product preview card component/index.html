@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, min-scale:1.0"
+    />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="box">
+        <div class="imgWrap">
+          <picture>
+            <source
+              media="(max-width: 799px)"
+              srcset="/images/image-product-mobile.jpg"
+            />
+            <source
+              media="(min-width: 800px)"
+              srcset="/images/image-product-desktop.jpg"
+            />
+            <img
+              class="img"
+              src="/images/image-product-desktop.jpg"
+              alt="Chris standing up holding his daughter Elva"
+            />
+          </picture>
+        </div>
+        <div class="desc">
+          <div class="category">PERFUME</div>
+          <div class="title">Gabrielle Essence Eau De Parfum</div>
+          <div class="content">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </div>
+          <div class="priceWrap">
+            <span class="priceOriginal">$149.99</span>
+            <span class="priceSale">$169.99</span>
+          </div>
+          <div class="btnPurchase">
+            <img src="images/icon-cart.svg" alt="" class="icon" />
+            <span class="text">Add to Cart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

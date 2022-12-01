@@ -1,0 +1,138 @@
+body {
+  background: #f2eae2;
+}
+
+.page {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page .box {
+  width: 600px;
+  height: 450px;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.page .box .imgWrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.page .box .imgWrap .img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 100%;
+  height: 100%;
+  background: yellow;
+}
+
+.page .box .desc {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: white;
+  padding: 32px;
+}
+
+.page .box .desc .category {
+  font-family: "Montserrat";
+  color: #6c7289;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.page .box .desc .title {
+  margin-top: 20px;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: #1c232b;
+}
+
+.page .box .desc .content {
+  margin-top: 24px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 23px;
+  color: #6c7289;
+}
+
+.page .box .desc .priceWrap {
+  margin-top: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page .box .desc .priceWrap .priceOriginal {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: #3d8168;
+}
+
+.page .box .desc .priceWrap .priceSale {
+  margin-left: 19px;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.page .box .desc .btnPurchase {
+  margin-top: 30px;
+  height: 48px;
+  background: #3d8168;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.page .box .desc .btnPurchase .text {
+  margin-left: 12px;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .page {
+    min-height: auto;
+  }
+  .page .box {
+    max-width: 300px;
+    margin: 28px 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=index.css.map */
