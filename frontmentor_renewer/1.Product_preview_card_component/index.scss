@@ -14,7 +14,8 @@ body {
     display: flex;
     .imgWrap {
       flex: 1;
-      .img {
+      .img,
+      source {
         object-fit: fill;
         width: 100%;
         height: 100%;

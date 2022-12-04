@@ -1,0 +1,145 @@
+@use "../util/util.scss" as util;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+$color_blue: #666ca3;
+$color_black: #13183f;
+$color_gray: #666ca3;
+$color_red: #13183f;
+$color_pink: #ffa7c3;
+
+@mixin colorGradient($color1, $color2, $degree: 180) {
+  background: linear-gradient($degree * 1deg, $color1 0%, $color2 100%);
+}
+
+@mixin gradientRed() {
+  @include colorGradient(rgba(240, 42, 166), rgba(255, 111, 72));
+}
+@mixin gradientBlue() {
+  @include colorGradient(rgba(72, 81, 255), rgba(240, 42, 166));
+}
+
+@mixin FontHeadingXL() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 71px;
+}
+@mixin FontHeadingL() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+}
+@mixin FontHeadingM() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 40px;
+}
+@mixin FontHeadingS() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin FontBodyM() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+@mixin FontBodyS() {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.pageWrap {
+  display: flex;
+  justify-content: center;
+  .page {
+    max-width: 1440px;
+    .header {
+      display: flex;
+      padding: 24px 40px;
+      .titleWrap {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        @include FontHeadingS;
+      }
+      .btnStartWrap {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        .btnStart {
+          width: 140px;
+          height: 48px;
+          background: $color_black;
+          @include FontBodyS;
+          color: white;
+          border-radius: 28px;
+        }
+      }
+    }
+    .titleSection {
+      display: flex;
+      flex-direction: column;
+      .leftWrap {
+        flex: 1;
+        background: util.rgbConverter();
+        .title {
+          @include FontHeadingL();
+        }
+        .subTitle {
+        }
+        .btnStart {
+          @include gradientRed;
+          font-size: 16px;
+          font-weight: 700px;
+          width: 167px;
+          height: 56px;
+          border: 0px;
+          border-radius: 31px;
+        }
+      }
+      .rightWrap {
+        flex: 1;
+        background: util.rgbConverter();
+        .img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+    .coursesSection {
+      .cardWrap {
+        .card {
+          background: util.rgbConverter();
+        }
+      }
+    }
+    .footer {
+      background: util.rgbConverter();
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .pageWrap {
+    .page {
+      .titleSection {
+        flex-direction: row;
+        .rightWrap {
+        }
+      }
+    }
+  }
+}
