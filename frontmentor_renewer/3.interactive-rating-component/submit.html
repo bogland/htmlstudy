@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../util/reset.css" />
+    <link rel="stylesheet" href="./css/submit.css" />
+    <script src="../util/util.js"></script>
+  </head>
+
+  <body>
+    <div class="pageWrap">
+      <div class="page">
+        <section class="cardWrap">
+          <div class="imageWrap">
+            <img
+              class="imageThankyou"
+              src="/3.interactive-rating-component/images/illustration-thank-you.svg"
+            />
+          </div>
+          <div class="textSelectedCount">
+            You selected &nbsp;<span class="value">1</span>&nbsp; out of 5
+          </div>
+          <div class="thankyou">Thank you!</div>
+          <div class="subTitle">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const valueSelected = document.querySelector(
+          ".textSelectedCount .value"
+        );
+        console.log(valueSelected);
+        valueSelected.innerText = "5";
+        const query = window.location.search.substring(1);
+        const queryParsed = getQueryParams(query);
+        const index = queryParsed["btnIndex"];
+        valueSelected.innerText = index;
+      })();
+    </script>
+  </body>
+</html>

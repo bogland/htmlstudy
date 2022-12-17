@@ -1,0 +1,77 @@
+@use "../../util/util.scss" as util;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:wght@500;600;700&display=swap");
+$color_veryDarkBlue: #131518;
+$color_black: #232a34;
+$color_dardBlue: #262e38;
+$color_mediumGray: #7c8798;
+$color_lightGray: #969fad;
+$color_orange: #fc7614;
+.pageWrap {
+  background: $color_veryDarkBlue;
+  .page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    .cardWrap {
+      background: radial-gradient(
+        98.96% 98.96% at 50% 0%,
+        #232a34 0%,
+        #181e27 100%
+      );
+      width: 412px;
+      border-radius: 30px;
+      padding: 45px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .imageWrap {
+        width: 162px;
+        margin: 0 auto;
+        .imageThankyou {
+          object-fit: cover;
+        }
+      }
+      .textSelectedCount {
+        margin-top: 32px;
+        background: $color_dardBlue;
+        border-radius: 22.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 193px;
+        height: 32px;
+
+        color: $color_orange;
+        font-family: "Overpass";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+      }
+      .thankyou {
+        margin-top: 32px;
+        color: white;
+        font-family: "Overpass";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 35px;
+      }
+      .subTitle {
+        margin-top: 15px;
+        color: $color_lightGray;
+        font-family: "Overpass";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        /* or 160% */
+
+        text-align: center;
+      }
+    }
+  }
+}
