@@ -1,0 +1,164 @@
+@use "../../util/util.scss" as util;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap");
+
+$color_deepAquamarine: hsl(158, 36%, 37%);
+$color_DeepAquamarineActive: #1a4032;
+$color_cream: hsl(30, 38%, 92%);
+$color_veryDarkBlue: hsl(212, 21%, 14%);
+$color_darkGrayishBlue: hsl(228, 12%, 48%);
+$color_white: hsl(0, 0%, 100%);
+
+.pageWrap {
+  .page {
+    .cardWrap {
+      .left {
+      }
+      .right {
+        margin: 24px 25px;
+      }
+    }
+  }
+}
+
+.pageWrap {
+  background: $color_cream;
+  .page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cardWrap {
+      width: 343px;
+      background: white;
+      .imgCardWrap {
+        width: 100%;
+        .imgCard {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .textCategory {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        letter-spacing: 5px;
+      }
+      .title {
+        margin-top: 12px;
+        font-family: "Fraunces";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 32px;
+      }
+      .subTitle {
+        margin-top: 16px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 23px;
+      }
+      .priceWrap {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        .priceSaled {
+          color: $color_deepAquamarine;
+
+          font-family: "Fraunces";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 32px;
+        }
+        .priceOriginal {
+          margin-left: 19px;
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 23px;
+          /* identical to box height, or 177% */
+
+          text-decoration-line: line-through;
+        }
+      }
+      .buttonCartWrap {
+        margin-top: 20px;
+        .buttonCart {
+          width: 295px;
+          height: 48px;
+          border: none;
+          width: 100%;
+          background: $color_deepAquamarine;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 14.4px;
+            height: 16px;
+          }
+          .textButton {
+            margin-left: 12px;
+            color: white;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+          }
+          &:active {
+            background: $color_DeepAquamarineActive;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .pageWrap {
+    .page {
+      .cardWrap {
+        max-width: 600px;
+        display: flex;
+        width: auto;
+        .left {
+          flex-basis: 50%;
+          .imgCardWrap {
+            width: auto;
+            height: auto;
+            .imgCard {
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        .right {
+          flex: 1;
+          margin: 32px 32px;
+
+          .title {
+            margin-top: 20px;
+          }
+          .subTitle {
+            margin-top: 24px;
+          }
+          .priceWrap {
+            margin-top: 29px;
+          }
+        }
+        .buttonCartWrap {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}

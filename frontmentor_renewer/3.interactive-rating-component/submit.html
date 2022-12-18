@@ -37,11 +37,10 @@
           ".textSelectedCount .value"
         );
         console.log(valueSelected);
-        valueSelected.innerText = "5";
         const query = window.location.search.substring(1);
         const queryParsed = getQueryParams(query);
         const index = queryParsed["btnIndex"];
-        valueSelected.innerText = index;
+        valueSelected.innerText = index || 0;
       })();
     </script>
   </body>

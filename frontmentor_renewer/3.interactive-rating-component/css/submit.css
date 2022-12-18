@@ -1,42 +1,64 @@
-@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:wght@500;600;700&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:wght@500;600;700&display=swap");
+@use "../../util/util.scss" as util;
 .pageWrap {
   background: #131518;
 }
+
 .pageWrap .page {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 .pageWrap .page .cardWrap {
-  background: radial-gradient(
-    98.96% 98.96% at 50% 0%,
-    #232a34 0%,
-    #181e27 100%
-  );
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
   width: 412px;
   border-radius: 30px;
   padding: 45px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .pageWrap .page .cardWrap .imageWrap {
   width: 162px;
   margin: 0 auto;
 }
+
 .pageWrap .page .cardWrap .imageWrap .imageThankyou {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
+
 .pageWrap .page .cardWrap .textSelectedCount {
   margin-top: 32px;
   background: #262e38;
   border-radius: 22.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 193px;
   height: 32px;
   color: #fc7614;
@@ -46,15 +68,17 @@
   font-size: 15px;
   line-height: 24px;
 }
+
 .pageWrap .page .cardWrap .thankyou {
   margin-top: 32px;
-  color: #fff;
+  color: white;
   font-family: "Overpass";
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 35px;
 }
+
 .pageWrap .page .cardWrap .subTitle {
   margin-top: 15px;
   color: #969fad;
@@ -63,5 +87,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
+  /* or 160% */
   text-align: center;
 }
+/*# sourceMappingURL=submit.css.map */

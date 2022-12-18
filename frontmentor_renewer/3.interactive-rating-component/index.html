@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="./css/index.css" />
     <script src="../util/util.js"></script>
   </head>
+  <script>
+    function passPage() {
+      const url = "./submit.html";
+      const params = new URLSearchParams({
+        btnIndex: 1,
+      });
+      const paramsString = params.toString();
+      //Prints "var1=value&var2=value2&arr=foo"
+      document.location.href = "./submit.html" + "?" + paramsString;
+    }
+  </script>
   <body>
     <div class="pageWrap">
       <div class="page">
@@ -32,6 +43,7 @@
                   type="radio"
                   name="btnIndex"
                   value="1"
+                  f
                   id="btnItem1"
                   hidden
                 />
@@ -88,7 +100,9 @@
                 </label>
               </li>
             </ul>
-            <button type="submit" class="btnSubmit">SUBMIT</button>
+            <button type="button" class="btnSubmit" onclick="passPage()">
+              SUBMIT
+            </button>
           </form>
         </section>
       </div>
