@@ -1,1 +1,179 @@
-@import"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,600&display=swap";@import"https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap";.pageWrap .page .cardWrap .right{margin:24px 25px}.pageWrap{background:#f2ebe3}.pageWrap .page{height:100vh;display:flex;justify-content:center;align-items:center}.pageWrap .page .cardWrap{width:343px;background:#fff}.pageWrap .page .cardWrap .imgCardWrap{width:100%}.pageWrap .page .cardWrap .imgCardWrap .imgCard{width:100%;-o-object-fit:cover;object-fit:cover}.pageWrap .page .cardWrap .textCategory{font-family:"Montserrat";font-style:normal;font-weight:500;font-size:12px;line-height:15px;letter-spacing:5px}.pageWrap .page .cardWrap .title{margin-top:12px;font-family:"Fraunces";font-style:normal;font-weight:700;font-size:32px;line-height:32px}.pageWrap .page .cardWrap .subTitle{margin-top:16px;font-family:"Montserrat";font-style:normal;font-weight:500;font-size:14px;line-height:23px}.pageWrap .page .cardWrap .priceWrap{margin-top:24px;display:flex;align-items:center}.pageWrap .page .cardWrap .priceWrap .priceSaled{color:#3c8067;font-family:"Fraunces";font-style:normal;font-weight:700;font-size:32px;line-height:32px}.pageWrap .page .cardWrap .priceWrap .priceOriginal{margin-left:19px;font-family:"Montserrat";font-style:normal;font-weight:500;font-size:13px;line-height:23px;-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.pageWrap .page .cardWrap .buttonCartWrap{margin-top:20px}.pageWrap .page .cardWrap .buttonCartWrap .buttonCart{width:295px;height:48px;border:none;width:100%;background:#3c8067;display:flex;justify-content:center;align-items:center}.pageWrap .page .cardWrap .buttonCartWrap .buttonCart img{width:14.4px;height:16px}.pageWrap .page .cardWrap .buttonCartWrap .buttonCart .textButton{margin-left:12px;color:#fff;font-family:"Montserrat";font-style:normal;font-weight:700;font-size:14px;line-height:17px}.pageWrap .page .cardWrap .buttonCartWrap .buttonCart:active{background:#1a4032}@media(min-width: 600px){.pageWrap .page .cardWrap{max-width:600px;display:flex;width:auto}.pageWrap .page .cardWrap .left{flex-basis:50%}.pageWrap .page .cardWrap .left .imgCardWrap{width:auto;height:auto}.pageWrap .page .cardWrap .left .imgCardWrap .imgCard{width:100%;-o-object-fit:cover;object-fit:cover}.pageWrap .page .cardWrap .right{flex:1;margin:32px 32px}.pageWrap .page .cardWrap .right .title{margin-top:20px}.pageWrap .page .cardWrap .right .subTitle{margin-top:24px}.pageWrap .page .cardWrap .right .priceWrap{margin-top:29px}.pageWrap .page .cardWrap .buttonCartWrap{margin-top:30px}}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap");
+@use "../../util/util.scss" as util;
+.pageWrap .page .cardWrap .right {
+  margin: 24px 25px;
+}
+
+.pageWrap {
+  background: #f2ebe3;
+}
+
+.pageWrap .page {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pageWrap .page .cardWrap {
+  width: 343px;
+  background: white;
+}
+
+.pageWrap .page .cardWrap .imgCardWrap {
+  width: 100%;
+}
+
+.pageWrap .page .cardWrap .imgCardWrap .imgCard {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pageWrap .page .cardWrap .textCategory {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  letter-spacing: 5px;
+}
+
+.pageWrap .page .cardWrap .title {
+  margin-top: 12px;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.pageWrap .page .cardWrap .subTitle {
+  margin-top: 16px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.pageWrap .page .cardWrap .priceWrap {
+  margin-top: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pageWrap .page .cardWrap .priceWrap .priceSaled {
+  color: #3c8067;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.pageWrap .page .cardWrap .priceWrap .priceOriginal {
+  margin-left: 19px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 23px;
+  /* identical to box height, or 177% */
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+.pageWrap .page .cardWrap .buttonCartWrap {
+  margin-top: 20px;
+}
+
+.pageWrap .page .cardWrap .buttonCartWrap .buttonCart {
+  width: 295px;
+  height: 48px;
+  border: none;
+  width: 100%;
+  background: #3c8067;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pageWrap .page .cardWrap .buttonCartWrap .buttonCart img {
+  width: 14.4px;
+  height: 16px;
+}
+
+.pageWrap .page .cardWrap .buttonCartWrap .buttonCart .textButton {
+  margin-left: 12px;
+  color: white;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.pageWrap .page .cardWrap .buttonCartWrap .buttonCart:active {
+  background: #1a4032;
+}
+
+@media (min-width: 600px) {
+  .pageWrap .page .cardWrap {
+    max-width: 600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+  }
+  .pageWrap .page .cardWrap .left {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  .pageWrap .page .cardWrap .left .imgCardWrap {
+    width: auto;
+    height: auto;
+  }
+  .pageWrap .page .cardWrap .left .imgCardWrap .imgCard {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .pageWrap .page .cardWrap .right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 32px 32px;
+  }
+  .pageWrap .page .cardWrap .right .title {
+    margin-top: 20px;
+  }
+  .pageWrap .page .cardWrap .right .subTitle {
+    margin-top: 24px;
+  }
+  .pageWrap .page .cardWrap .right .priceWrap {
+    margin-top: 29px;
+  }
+  .pageWrap .page .cardWrap .buttonCartWrap {
+    margin-top: 30px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

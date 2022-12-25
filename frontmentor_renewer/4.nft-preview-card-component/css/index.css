@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&display=swap");
+@use "../../util/util.scss" as util;
+.bgWrap {
+  background: #0d192c;
+}
+
+.bgWrap .bg {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bgWrap .bg .cardWrap {
+  padding: 24px 24px 32px 24px;
+  background: #15263f;
+  width: 350px;
+}
+
+.bgWrap .bg .cardWrap .imgWrap:hover .active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bgWrap .bg .cardWrap .imgWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bgWrap .bg .cardWrap .imgWrap img {
+  width: 100%;
+}
+
+.bgWrap .bg .cardWrap .imgWrap .active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bgWrap .bg .cardWrap .imgWrap .active .activeBG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00fff8;
+  opacity: 0.5;
+}
+
+.bgWrap .bg .cardWrap .imgWrap .active .iconEye {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 44px;
+  height: 30px;
+  position: absolute;
+}
+
+.bgWrap .bg .cardWrap .title {
+  margin-top: 24px;
+  color: white;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.bgWrap .bg .cardWrap .title:hover {
+  color: #00fff8;
+  cursor: pointer;
+}
+
+.bgWrap .bg .cardWrap .subTitle {
+  margin-top: 16px;
+  color: #8bacd9;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.bgWrap .bg .cardWrap .line {
+  margin-top: 24px;
+  width: 100%;
+  height: 1px;
+  background: #2e405a;
+}
+
+.bgWrap .bg .cardWrap .infoWrap {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .priceWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .priceWrap img {
+  width: 11px;
+  height: 18px;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .priceWrap .price {
+  margin-left: 6.5px;
+  white-space: nowrap;
+  color: #00fff8;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .dayLeftWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .dayLeftWrap img {
+  width: 13px;
+  height: 13px;
+}
+
+.bgWrap .bg .cardWrap .infoWrap .dayLeftWrap .dayLeft {
+  margin-left: 9px;
+  color: #8bacd9;
+  white-space: nowrap;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bgWrap .bg .cardWrap .creatorWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 16px;
+}
+
+.bgWrap .bg .cardWrap .creatorWrap img {
+  height: 33px;
+  width: 33px;
+}
+
+.bgWrap .bg .cardWrap .creatorWrap .creatorName {
+  color: #8bacd9;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bgWrap .bg .cardWrap .creatorWrap .creatorName .name {
+  color: white;
+}
+
+.bgWrap .bg .cardWrap .creatorWrap .creatorName .name:hover {
+  color: #00fff8;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */

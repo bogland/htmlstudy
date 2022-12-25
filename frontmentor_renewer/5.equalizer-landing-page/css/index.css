@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@use "../../util/util.scss" as util;
+.page {
+  background: no-repeat top -104px right -65.4px url("../images/bg-main-mobile.png");
+  background-size: 281px 480px;
+}
+
+.titleSection {
+  padding: 40px 24px 0 24px;
+  width: 100%;
+}
+
+.titleSection .title {
+  margin-top: 64px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  /* or 120% */
+  letter-spacing: -0.454545px;
+}
+
+.titleSection .subTitle {
+  margin-top: 20px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.imageMainWrap {
+  margin-top: 168px;
+  position: relative;
+  width: 100%;
+  background: #191826;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.imageMainWrap .phone {
+  position: absolute;
+  top: -100px;
+  width: 209px;
+  height: 430px;
+}
+
+.priceInfoSection {
+  position: absolute;
+  top: 380px;
+  border-radius: 12px;
+  padding: 48px 36px;
+  background: #fa7453;
+  color: #fcfaf9;
+}
+
+.priceInfoSection .title {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.priceInfoSection .subTitle {
+  margin-top: 12px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.priceInfoSection .priceWrap {
+  margin-top: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.priceInfoSection .priceWrap .price {
+  margin-left: 6px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 65px;
+  line-height: 52px;
+}
+
+.priceInfoSection .priceWrap .month {
+  margin-left: 16px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  /* identical to box height, or 160% */
+  letter-spacing: -0.2px;
+}
+
+.priceInfoSection .ios {
+  margin-top: 32px;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 61px;
+  border: none;
+  background: #191826;
+  color: #fcfaf9;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.priceInfoSection .ios img {
+  width: 20px;
+  height: 20px;
+}
+
+.priceInfoSection .aos {
+  margin-top: 16px;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 61px;
+  border: none;
+  background: #fcfaf9;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.priceInfoSection .aos img {
+  width: 20px;
+  height: 20px;
+}
+
+footer {
+  margin-top: 500px;
+  padding: 0 25px 80px;
+}
+
+footer .logo {
+  width: 146px;
+  height: 32px;
+}
+
+footer .info {
+  margin-top: 32px;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+footer .info .email {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+footer .iconSNSWrap {
+  margin-top: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+footer .iconSNSWrap .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 600px) {
+  .page {
+    background: no-repeat top -154px right -65.4px url("../images/bg-main-tablet.png"), no-repeat top right url("../images/bg-pattern-1.svg");
+    background-size: contain, 30%;
+  }
+  .page .titleSection {
+    width: 70%;
+    padding: 61px 39px 0 39px;
+  }
+  .page .titleSection .title {
+    margin-top: 95px;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 64px;
+    /* or 100% */
+    letter-spacing: -0.727273px;
+  }
+  .page .titleSection .subTitle {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .page .imageMainWrap {
+    margin-left: 39px;
+    margin-right: 39px;
+    width: calc(100% - 39px * 2);
+  }
+  .page .imageMainWrap .phone {
+    left: calc(30%);
+    -webkit-transform: translateX(-60%);
+            transform: translateX(-60%);
+  }
+  .page .imageMainWrap .priceInfoSection {
+    max-width: 400px;
+    right: calc(30%);
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%);
+    top: 100px;
+  }
+  .page .infoWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .page .infoWrap .info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .page .infoWrap .iconSNSWrap {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .page footer {
+    margin-top: 200px;
+  }
+}
+
+@media (min-width: 1320px) {
+  .page {
+    background-size: contain, 15%;
+    background-position: top -20px right;
+  }
+  .page .titleSection {
+    width: 80%;
+    padding: 61px 165px 0 165px;
+  }
+  .page .titleSection .title {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 88px;
+    /* or 100% */
+    letter-spacing: -1px;
+  }
+  .page .titleSection .subTitle {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+  }
+  .page .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .page .footer .logo {
+    -ms-flex-preferred-size: 1;
+        flex-basis: 1;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .page .footer .infoWrap {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page .footer .infoWrap .info {
+    margin-left: 138px;
+    -ms-flex-preferred-size: 2;
+        flex-basis: 2;
+    margin-top: 0;
+  }
+  .page .footer .infoWrap .iconSNSWrap {
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=index.css.map */
