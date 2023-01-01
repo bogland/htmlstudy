@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/util/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="pageWrap">
+
+        <div class="page">
+            <div class="title">Password Generator</div>
+            <div class="passwordWrap">
+                <div class="value">
+                    PTx1f5DaFX
+                </div>
+                <img class="icon" src="/7.password-generator-app/images/icon-copy.svg" alt="" srcset="">
+            </div>
+            <section class="inputSection">
+                <div class="characterValueWrap">
+                    <div class="label">
+                        Character Length
+                    </div>
+                    <div class="value">
+                        10
+                    </div>
+                </div>
+                <input type="range" class="slider">
+                <section class="checkboxGroup">
+                    <div class="checkboxWrap">
+                        <label for="uppercase">
+                            <input type="checkbox" class="checkbox" id="uppercase" />
+                            <div class="iconCheckbox"></div>
+                            <div class="value">Include Uppercase Letters</div>
+                        </label>
+                    </div>
+                    <div class="checkboxWrap">
+                        <label for="lowercase">
+                            <input type="checkbox" class="checkbox" id="lowercase" />
+                            <div class="iconCheckbox"></div>
+                            <div class="value">Include Lowercase Letters</div>
+                        </label>
+                    </div>
+                    <div class="checkboxWrap">
+                        <label for="number">
+                            <input type="checkbox" class="checkbox" id="number" />
+                            <div class="iconCheckbox"></div>
+                            <div class="value">Include Numbers</div>
+                        </label>
+                    </div>
+                    <div class="checkboxWrap">
+                        <label for="symbols">
+                            <input type="checkbox" class="checkbox" id="symbols" />
+                            <div class="iconCheckbox"></div>
+                            <div class="value">Include Symbols</div>
+                        </label>
+                    </div>
+                </section>
+
+                <div class="strengthWrap">
+                    <div class="label">STRENGTH</div>
+                    <div class="strengthIconWrap">
+                        <div class="label">MEDIUM</div>
+                        <ul class="iconWrap">
+                            <li class="iconStrength active">
+                            </li>
+                            <li class="iconStrength active">
+                            </li>
+                            <li class="iconStrength active">
+                            </li>
+                            <li class="iconStrength">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="generate">
+                    <div class="label">GENERATE</div>
+                    <img class="icon" src="/7.password-generator-app/images/icon-arrow-right.svg" alt="" srcset="">
+                </button>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
