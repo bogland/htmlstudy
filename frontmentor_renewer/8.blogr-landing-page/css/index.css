@@ -1,0 +1,858 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+header.pc {
+  display: none;
+}
+
+header.mobile {
+  padding: 56px 24px 156px;
+  position: relative;
+  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  border-radius: 0px 0px 0px 100px;
+  height: 600px;
+  overflow: hidden;
+}
+
+header.mobile .background {
+  z-index: 1;
+  position: absolute;
+  top: -250px;
+  left: -300px;
+}
+
+header.mobile .headerWrap {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.mobile .headerWrap .logo {
+  width: 81.66px;
+  height: 32px;
+}
+
+header.mobile .headerWrap .hamburger {
+  width: 32px;
+  height: 18px;
+}
+
+header.mobile nav.categoryPopup {
+  display: none;
+  position: relative;
+  z-index: 3;
+  padding: 24px 24px 32px;
+  position: absolute;
+  top: 125px;
+  left: 24px;
+  width: calc(100% - 48px);
+  background: #ffffff;
+  -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+  border-radius: 5px;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item .mainCategory {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item .mainCategory .title {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #1f3e5a;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item .mainCategory .icon {
+  width: 10px;
+  height: 4px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item .mainCategory + .item {
+  margin-top: 24px;
+}
+
+header.mobile nav.categoryPopup .categoryWrap .item + .item {
+  margin-top: 24px;
+}
+
+header.mobile nav.categoryPopup .subCategoryWrap {
+  margin-top: 24px;
+  width: 100%;
+  padding-top: 17px;
+  padding-bottom: 25px;
+  background: #efeff0;
+  border-radius: 5px;
+  display: none;
+}
+
+header.mobile nav.categoryPopup .subCategoryWrap .item {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
+  text-align: center;
+  color: #536a7f;
+}
+
+header.mobile nav.categoryPopup .subCategoryWrap .item + .item {
+  margin-top: 12px;
+}
+
+header.mobile nav.categoryPopup .subCategoryWrap.active {
+  display: block;
+}
+
+header.mobile nav.categoryPopup .loginWrap {
+  margin-top: 24px;
+  border-top: solid 1px #e8e4e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.mobile nav.categoryPopup .loginWrap .login {
+  margin-top: 24px;
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  /* identical to box height, or 156% */
+  text-align: center;
+  color: #1f3e5a;
+}
+
+header.mobile nav.categoryPopup .loginWrap .signUp {
+  margin-top: 24px;
+  height: 48px;
+  width: 137px;
+  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  border-radius: 28px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: right;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.mobile .titleWrap {
+  position: relative;
+  z-index: 2;
+  margin-top: 108px;
+}
+
+header.mobile .titleWrap .title {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 55px;
+  text-align: center;
+  letter-spacing: -1.08px;
+  color: #ffffff;
+}
+
+header.mobile .titleWrap .subTitle {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+}
+
+header.mobile .titleWrap .buttonWrap {
+  margin-top: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+}
+
+header.mobile .titleWrap .buttonWrap button {
+  width: 100%;
+  height: 48px;
+  border-radius: 28px;
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.mobile .titleWrap .buttonWrap .start {
+  background: white;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: right;
+  color: #ff505c;
+}
+
+header.mobile .titleWrap .buttonWrap .learn {
+  background: none;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: right;
+  color: #ffffff;
+}
+
+section.contentSection {
+  margin: 100px 24px 0px;
+}
+
+section.contentSection .titleMain {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 43px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.84px;
+  color: #1f3e5a;
+}
+
+section.contentSection .contentWrap img {
+  margin-top: 38px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section.contentSection .contentWrap .contextWrap {
+  margin-top: 46px;
+}
+
+section.contentSection .contentWrap .contextWrap .title {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+  /* or 114% */
+  text-align: center;
+  color: #1f3e5a;
+}
+
+section.contentSection .contentWrap .contextWrap .context {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #4c5862;
+}
+
+section.contentSection .contentWrap .contextWrap + .contextWrap {
+  margin-top: 40px;
+}
+
+section.introduceAppSection {
+  height: 625px;
+  margin-top: 273px;
+  position: relative;
+  background: linear-gradient(135deg, #2d2e40 0%, #3f4164 100%);
+  border-radius: 0px 100px;
+}
+
+section.introduceAppSection .contentWrap {
+  z-index: 2;
+  top: -270px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.introduceAppSection .contentWrap .imgPhone {
+  width: 100%;
+}
+
+section.introduceAppSection .contentWrap .contextWrap .title {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 61px;
+  text-align: center;
+  letter-spacing: -1.2px;
+  color: #ffffff;
+}
+
+section.introduceAppSection .contentWrap .contextWrap .context {
+  margin-top: 16px;
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+section.introduceAppSection .backgroundWrap {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 0px 100px;
+}
+
+section.introduceAppSection .backgroundWrap .background {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+
+footer {
+  margin-top: 100px;
+  padding: 75px 24px;
+  background: #24242c;
+  border-radius: 0px 100px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .logo {
+  height: 40px;
+}
+
+footer .navList {
+  margin-top: 72px;
+}
+
+footer .navList .item .title {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 33px;
+  /* identical to box height, or 183% */
+  text-align: center;
+  color: #ffffff;
+}
+
+footer .navList .item .subItemList {
+  margin-top: 21px;
+}
+
+footer .navList .item .subItemList .subItem {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  /* or 183% */
+  text-align: center;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
+footer .navList .item + .item {
+  margin-top: 40px;
+}
+
+@media (min-width: 600px) {
+  header.mobile {
+    display: none;
+  }
+  header.pc {
+    position: relative;
+    padding: 59px 167px 155px;
+    height: 600px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+    border-radius: 0px 0px 0px 100px;
+    display: block;
+  }
+  header.pc .background {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    top: -500px;
+    left: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  header.pc .headerWrap {
+    z-index: 3;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header.pc .headerWrap .logoWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header.pc .headerWrap .logoWrap .logo {
+    width: 101px;
+    height: 40px;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap {
+    margin-left: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item {
+    position: relative;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item .mainCategory {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item .mainCategory .icon {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 10px;
+    height: 6px;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item .mainCategory:hover {
+    font-weight: 700;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item + .item {
+    margin-left: 32px;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item.active .title {
+    border-bottom: solid 1px white;
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item.active .icon {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  header.pc .headerWrap .logoWrap .categoryWrap .item.active .subCategoryWrap {
+    display: block;
+  }
+  header.pc .headerWrap .logoWrap .subCategoryWrap {
+    position: absolute;
+    left: 0;
+    top: calc(22px + 27px);
+    display: none;
+    padding: 24px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+    border-radius: 5px;
+  }
+  header.pc .headerWrap .logoWrap .subCategoryWrap .itemSub {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 33px;
+    cursor: pointer;
+    /* or 220% */
+    color: #2d2e40;
+  }
+  header.pc .headerWrap .logoWrap .subCategoryWrap .itemSub:hover {
+    font-weight: 700;
+  }
+  header.pc .headerWrap .loginWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 32px;
+  }
+  header.pc .headerWrap .loginWrap .login {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    /* identical to box height, or 156% */
+    text-align: center;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+  }
+  header.pc .headerWrap .loginWrap .signUp {
+    height: 48px;
+    width: 137px;
+    background: #ffffff;
+    border-radius: 28px;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    color: #ff505c;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header.pc .titleWrap {
+    position: relative;
+    z-index: 2;
+    margin-top: 132px;
+  }
+  header.pc .titleWrap .title {
+    font-family: "Overpass SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 98px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: -1.92px;
+    color: #ffffff;
+  }
+  header.pc .titleWrap .subTitle {
+    font-family: "Overpass Light";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    /* identical to box height */
+    text-align: center;
+    color: #ffffff;
+  }
+  header.pc .titleWrap .buttonWrap {
+    margin-top: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 16px;
+  }
+  header.pc .titleWrap .buttonWrap button {
+    width: 137px;
+    height: 48px;
+    border-radius: 28px;
+    border: 1px solid #ffffff;
+    border-radius: 28px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header.pc .titleWrap .buttonWrap .start {
+    background: white;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    color: #ff505c;
+  }
+  header.pc .titleWrap .buttonWrap .start:active {
+    background: #ff7b86;
+    color: white;
+  }
+  header.pc .titleWrap .buttonWrap .learn {
+    background: none;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: right;
+    color: #ffffff;
+  }
+  header.pc .titleWrap .buttonWrap .learn:active {
+    background: #ffffff;
+    color: #ff7b86;
+  }
+  section.introduceAppSection {
+    padding: 0 165px;
+    margin-top: 57px;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+  section.introduceAppSection .contentWrap {
+    width: 100%;
+    top: -60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  section.introduceAppSection .contentWrap .imgPhone {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section.introduceAppSection .contentWrap .contextWrap {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+  section.introduceAppSection .contentWrap .contextWrap .title {
+    text-align: left;
+  }
+  section.introduceAppSection .contentWrap .contextWrap .context {
+    margin-top: 16px;
+    text-align: left;
+  }
+  section.introduceAppSection .backgroundWrap {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 0px 100px;
+  }
+  section.introduceAppSection .backgroundWrap .background {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    top: -250%;
+    left: -500px;
+  }
+  section.contentSection#contentThird .contentWrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  section.contentSection {
+    margin: 105px 0px 0px;
+  }
+  section.contentSection .titleMain {
+    position: relative;
+    top: 150px;
+    font-size: 40px;
+    line-height: 61px;
+  }
+  section.contentSection .contentWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 109px;
+  }
+  section.contentSection .contentWrap picture {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    margin-top: 38px;
+  }
+  section.contentSection .contentWrap picture img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  section.contentSection .contentWrap .contextList {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  section.contentSection .contentWrap .contextList .contextWrap {
+    margin-top: 46px;
+  }
+  section.contentSection .contentWrap .contextList .contextWrap .title {
+    text-align: left;
+  }
+  section.contentSection .contentWrap .contextList .contextWrap .context {
+    margin-top: 16px;
+    text-align: left;
+  }
+  section.contentSection .contentWrap .contextList .contextWrap + .contextWrap {
+    margin-top: 64px;
+  }
+  footer {
+    margin-top: 123px;
+    padding: 70px 165px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .logo {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    width: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  footer .navList {
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
+    margin-top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .navList .item {
+    width: 33.33%;
+  }
+  footer .navList .item .title {
+    text-align: left;
+  }
+  footer .navList .item .subItemList .subItem {
+    text-align: left;
+  }
+  footer .navList .item + .item {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=index.css.map */

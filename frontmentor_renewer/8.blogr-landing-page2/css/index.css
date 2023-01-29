@@ -1,0 +1,95 @@
+.wrapper {
+  margin: 0 24px;
+}
+
+header {
+  height: 600px;
+  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  border-radius: 0px 0px 0px 100px;
+}
+
+.menu {
+  position: relative;
+  padding-top: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu .hamburger {
+  margin-left: auto;
+}
+
+.menu .popupMenu {
+  display: none;
+  position: absolute;
+  padding: 24px 24px 32px;
+  top: 125px;
+  left: 50%;
+  width: calc(100%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #ffffff;
+  -webkit-box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+  border-radius: 5px;
+}
+
+.menu .popupMenu .categoryWrap .item .titleWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+}
+
+.menu .popupMenu .categoryWrap .item .titleWrap img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.menu .popupMenu .categoryWrap .item .subCategoryWrap {
+  overflow: hidden;
+  margin-top: 17px;
+  text-align: center;
+  max-height: 0px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.menu .popupMenu .categoryWrap .item .subCategoryWrap .itemSub + .itemSub {
+  margin-top: 12px;
+}
+
+.menu .popupMenu .categoryWrap .item + .item {
+  margin-top: 24px;
+}
+
+.menu .popupMenu .categoryWrap .item.open .subCategoryWrap {
+  max-height: 400px;
+  height: auto;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.menu .popupMenu .categoryWrap .item.open .titleWrap img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.open {
+  display: block !important;
+}
+/*# sourceMappingURL=index.css.map */

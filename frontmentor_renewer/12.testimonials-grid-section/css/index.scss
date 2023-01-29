@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600;700;800&display=swap");
+
+body {
+  background: #ecf2f8;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardSection {
+  margin: 0 auto;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, minmax(auto, 255px));
+  // grid-template-rows: repeat(2, minmax(auto, 266px));
+  grid-template-areas:
+    "a a b e"
+    "c d d e";
+
+  #daniel {
+    grid-area: a;
+    background: no-repeat right 80px top
+        url("../images/bg-pattern-quotation.svg"),
+      #733fc8;
+    background-size: 104px 102px;
+    .title {
+      color: #ffffff;
+    }
+    .describe {
+      color: #cfcfcf;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+  }
+  #jeanette {
+    grid-area: b;
+    background: #48556a;
+    .title {
+      color: #ffffff;
+    }
+    .describe {
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+  }
+  #jonathan {
+    grid-area: c;
+    background: #ffffff;
+    .title {
+      color: #48556a;
+    }
+    .describe {
+      color: #48556a;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+  }
+  #kira {
+    grid-area: d;
+    background: #19202d;
+    .title {
+      color: #ffffff;
+    }
+    .describe {
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+  }
+  #patrick {
+    grid-area: e;
+    background: #ffffff;
+    .title {
+      color: #48556a;
+    }
+    .describe {
+      color: #48556a;
+      mix-blend-mode: normal;
+      opacity: 0.7;
+    }
+  }
+}
+article {
+  padding: 26px 32px 32px;
+  background: #ffffff;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
+  border-radius: 8px;
+  .avatarWrap {
+    display: flex;
+    gap: 17px;
+  }
+  img.avatar {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #a775f1;
+    border-radius: 50%;
+  }
+  .nameWrap {
+    .name {
+      color: #ffffff;
+      font-family: "Barlow Semi Condensed";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      /* identical to box height, or 100% */
+    }
+    .graduated {
+      margin-top: 4px;
+      color: #ffffff;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+      font-family: "Barlow Semi Condensed";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 11px;
+    }
+  }
+  div.title {
+    margin-top: 18px;
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  div.describe {
+    margin-top: 16px;
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    /* or 138% */
+  }
+}
+
+@media (max-width: 600px) {
+  .cardSection {
+    margin: 71px 24px;
+    display: grid;
+    gap: 24px;
+    grid-template-areas: none;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    article {
+      grid-area: auto !important;
+    }
+    #daniel {
+      background-position: top 0 right 24px;
+    }
+  }
+}

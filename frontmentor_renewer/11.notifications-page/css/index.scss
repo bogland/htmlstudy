@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+header {
+  padding: 24px 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .title {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+
+    /* 3 - Very Dark Grey Blue */
+
+    color: #1c202b;
+  }
+  .count {
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: 9px;
+    width: 32px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a327b;
+    border-radius: 6px;
+
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  .markRead {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+
+    color: #5e6778;
+    &:hover {
+      cursor: pointer;
+      color: #0a327b;
+    }
+  }
+}
+main {
+  margin: 24px 16px 29px;
+  article + article {
+    margin-top: 10px;
+  }
+}
+
+article {
+  padding: 16px;
+  display: flex;
+  gap: 13px;
+
+  &.notice {
+    background: #f7fafd;
+  }
+  border-radius: 8px;
+
+  .imgAvatar {
+    width: 39px;
+    height: 39px;
+  }
+  .bold,
+  .group,
+  .writer {
+    display: inline-block;
+    &:hover {
+      cursor: pointer;
+      font-weight: 800;
+      color: #0a327b;
+    }
+    &::before {
+      display: block;
+      content: attr(text);
+      font-weight: 800;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+  .privateMessage {
+    &:hover {
+      cursor: pointer;
+      background: #e5effa;
+      border: 1px solid #dde7ee;
+      border-radius: 5px;
+    }
+  }
+
+  .writer {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1c202b;
+  }
+  .comment {
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e6778;
+  }
+  .bold {
+    font-weight: 700;
+    color: #5e6778;
+  }
+  .badge {
+    margin-left: 6px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #f65552;
+    border-radius: 50%;
+  }
+  .group {
+    margin-left: 5px;
+    font-weight: 700;
+    color: #0a327b;
+  }
+  .time {
+    margin-top: 3px;
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height */
+
+    /* 5 - Grey Blue */
+
+    color: #939cad;
+  }
+  .privateMessage {
+    margin-top: 12px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid #dde7ee;
+    border-radius: 5px;
+
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    /* 4 - Dark Grey Blue */
+
+    color: #5e6778;
+  }
+  .thumbnail {
+    &:hover {
+      cursor: pointer;
+    }
+    margin-left: auto;
+    width: 39px;
+    height: 39px;
+    border-radius: 7px;
+  }
+}

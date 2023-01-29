@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+.header {
+  width: 100%;
+  height: 200px;
+  padding: 48px 26px;
+  background: no-repeat url("../images/bg-mobile-light.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .logo {
+  width: 109px;
+  height: 20px;
+}
+
+.header .iconLight {
+  width: 20px;
+  height: 20px;
+}
+
+body.light .dark {
+  display: none;
+}
+
+body.dark .header {
+  background: no-repeat url("../images/bg-mobile-dark.jpg");
+  background-size: cover;
+}
+
+body.dark main {
+  background: #171823;
+}
+
+body.dark * {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+body.dark .item,
+body.dark input,
+body.dark .activeSection {
+  background: #25273d;
+}
+
+body.dark .light {
+  display: none;
+}
+
+body.dark #content li + li {
+  border-color: #393a4b;
+}
+
+body.dark .dragDescribe {
+  color: #5b5e7e;
+}
+
+main {
+  padding: 0 24px 72px;
+  background: #f2f2f2;
+}
+
+main #first {
+  position: relative;
+  top: -96px;
+}
+
+main #content {
+  position: relative;
+  top: -76px;
+  -webkit-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+          box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+main #content li + li {
+  border-top: solid 1px #e3e4f1;
+}
+
+.hidden {
+  display: none;
+}
+
+.item {
+  width: 100%;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.item .checkbox {
+  width: 20px;
+  height: 20px;
+  border: solid 1px #979797;
+  border-radius: 50%;
+}
+
+.item .input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin-left: 52px;
+  border-radius: 5px;
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.25px;
+  color: #393a4b;
+}
+
+.item .input::-webkit-input-placeholder {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+}
+
+.item .input:-ms-input-placeholder {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+}
+
+.item .input::-ms-input-placeholder {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+}
+
+.item .input::placeholder {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+}
+
+.item .input:focus {
+  outline: none !important;
+}
+
+.item label {
+  position: absolute;
+  left: 20px;
+}
+
+.item input.hidden:checked + label .checkbox {
+  background: no-repeat center url("../images/icon-check.svg"), no-repeat linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  background-size: 8px 7px, 100% 100%;
+}
+
+.item input.hidden:not(:checked) + label .checkbox:hover {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.activeSection {
+  position: relative;
+  background: white;
+  height: 48px;
+  border-radius: 5px;
+  top: -50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 18px;
+  -webkit-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+          box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+.activeSection .status {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  color: #9495a5;
+  /* identical to box height */
+  letter-spacing: -0.194444px;
+}
+
+.activeSection .status.active {
+  color: #3a7cfd;
+}
+
+.dragDescribe {
+  position: relative;
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: -0.194444px;
+  color: #9495a5;
+}
+/*# sourceMappingURL=index.css.map */

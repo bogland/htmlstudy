@@ -1,0 +1,76 @@
+.wrapper {
+  margin: 0 24px;
+}
+
+header {
+  height: 600px;
+  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  border-radius: 0px 0px 0px 100px;
+}
+
+.menu {
+  position: relative;
+  padding-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+  }
+  .hamburger {
+    margin-left: auto;
+  }
+  .popupMenu {
+    display: none;
+    position: absolute;
+    padding: 24px 24px 32px;
+    top: 125px;
+    left: 50%;
+    width: calc(100%);
+    transform: translateX(-50%);
+    background: #ffffff;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+    border-radius: 5px;
+    .categoryWrap {
+      .item {
+        .titleWrap {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          img {
+            object-fit: contain;
+            transition: all 0.1s;
+          }
+        }
+        .subCategoryWrap {
+          overflow: hidden;
+          // display: none;
+          margin-top: 17px;
+          text-align: center;
+          max-height: 0px;
+          transition: all 0.1s;
+          .itemSub {
+            & + .itemSub {
+              margin-top: 12px;
+            }
+          }
+        }
+        & + .item {
+          margin-top: 24px;
+        }
+        &.open .subCategoryWrap {
+          // display: block !important;
+          max-height: 400px;
+          height: auto;
+          transition: all 1s ease-in-out;
+        }
+        &.open .titleWrap img {
+          transform: rotate(180deg);
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+.open {
+  display: block !important;
+}

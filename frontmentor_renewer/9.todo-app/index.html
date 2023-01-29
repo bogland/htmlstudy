@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="../util/reset.css">
+</head>
+
+<body class="dark">
+	<header class="header">
+		<img class="logo" src="/9.todo-app/images/TODO.png" alt="">
+		<img src="/9.todo-app/images/icon-moon.svg" alt="" class="light iconLight">
+		<img src="/9.todo-app/images/icon-sun.svg" alt="" class="dark iconLight">
+	</header>
+	<main>
+		<div id="first" class="item">
+			<input class="hidden" type="checkbox" id="checkboxCreate">
+			<label for="checkboxCreate">
+				<div class="checkbox"></div>
+			</label>
+			<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+		</div>
+		<ul id="content">
+			<li>
+				<div class="item">
+					<input class="hidden" type="checkbox" id="checkbox1">
+					<label for="checkbox1">
+						<div class="checkbox"></div>
+					</label>
+					<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<input class="hidden" type="checkbox" id="checkbox2">
+					<label for="checkbox2">
+						<div class="checkbox"></div>
+					</label>
+					<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<input class="hidden" type="checkbox" id="checkbox3">
+					<label for="checkbox3">
+						<div class="checkbox"></div>
+					</label>
+					<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<input class="hidden" type="checkbox" id="checkbox4">
+					<label for="checkbox4">
+						<div class="checkbox"></div>
+					</label>
+					<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<input class="hidden" type="checkbox" id="checkbox5">
+					<label for="checkbox5">
+						<div class="checkbox"></div>
+					</label>
+					<input placeholder="Create a new todo" type="text" class="input inputCreate" />
+				</div>
+			</li>
+		</ul>
+		<section class="activeSection">
+			<div class="status active">All</div>
+			<div class="status">Active</div>
+			<div class="status">Completed</div>
+		</section>
+		<div class="dragDescribe">
+			Drag and drop to reorder list
+		</div>
+	</main>
+	<footer></footer>
+	<script src="./index.js"></script>
+</body>
+
+</html>
