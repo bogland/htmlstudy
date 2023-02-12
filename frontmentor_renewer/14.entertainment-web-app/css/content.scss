@@ -1,0 +1,90 @@
+body {
+  background: #10141e;
+}
+
+header {
+  padding: 16px;
+  background: #161d2f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img.logo {
+    width: 18px;
+    height: 16px;
+  }
+  img.avatar {
+    width: 24px;
+    height: 24px;
+  }
+}
+ol.category {
+  display: flex;
+  gap: 24px;
+  li img {
+    width: 16px;
+    height: 16px;
+  }
+  img.active {
+    filter: brightness(0) invert(1);
+  }
+}
+main {
+  h1 {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+
+    /* Pure White */
+
+    color: #ffffff;
+  }
+  .trendSection {
+    margin: 24px 16px 0;
+    width: 100vw;
+    overflow: hidden;
+    .imageWrap {
+      border-radius: 8px;
+      overflow: hidden;
+      width: 240px;
+      img {
+        object-fit: cover;
+        height: 140px;
+        width: 100%;
+        -webkit-user-drag: none;
+      }
+    }
+    ul {
+      margin-top: 16px;
+      display: flex;
+      gap: 16px;
+      li {
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+.searchWrap {
+  margin: 24px 16px;
+  display: flex;
+  align-items: center;
+  input {
+    width: 100%;
+    margin-left: 16px;
+    background: none;
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+
+    /* Pure White */
+
+    color: #ffffff;
+
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+}
